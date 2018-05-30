@@ -12,7 +12,6 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private boolean[] keys;
 
-    //instance fields for frogger.
 
 
     //TESTING
