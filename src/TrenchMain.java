@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * Created by student on 5/29/18.
@@ -10,13 +11,16 @@ public class TrenchMain extends JPanel {
     //instance fields for the general environment
     public static final int FRAMEWIDTH = 1200, FRAMEHEIGHT = 800;
     private Timer timer;
+    private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
+    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
 
-    Sprite s = new Soldier(0, 150);
+
+    Soldier s = new Soldier(0, 150, 100, 100);
     //TESTING
 
     public TrenchMain(){
-
+        soldiers.add(s);
         timer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
