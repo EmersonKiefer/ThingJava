@@ -23,7 +23,7 @@ public class Sprite {
     public Sprite(int x, int y, int direction) {
         loc = new Point(x, y);
         dir = direction;
-        setPic("blank.png", NORTH);
+        setPic("Rifle.png", NORTH);
         speed = getBoundingRectangle().height;  //moves one height's worth by default.
 
         id = nextID;
@@ -34,13 +34,15 @@ public class Sprite {
      * This draws the image pic at the Point loc, rotated to face dir.
      */
     public void draw(Graphics2D g2) {
-        double rotationRequired = Math.toRadians(picOrientation - dir);
-        double halfWidth = pic.getWidth() / 2;
-        double halfHeight = pic.getHeight() / 2;
-        g2.rotate(rotationRequired, loc.x+halfWidth, loc.y+halfHeight);
-        g2.drawImage(pic, loc.x, loc.y, null);
-        g2.rotate(-rotationRequired, loc.x+halfWidth, loc.y+halfHeight);
+        if(pic != null) {
+            double rotationRequired = Math.toRadians(picOrientation - dir);
+            double halfWidth = pic.getWidth() / 2;
+            double halfHeight = pic.getHeight() / 2;
+            g2.rotate(rotationRequired, loc.x + halfWidth, loc.y + halfHeight);
+            g2.drawImage(pic, loc.x, loc.y, null);
+            g2.rotate(-rotationRequired, loc.x + halfWidth, loc.y + halfHeight);
 //        g2.draw(getBoundingRectangle());
+        }
     }
 
     /**

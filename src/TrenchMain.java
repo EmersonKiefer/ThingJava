@@ -8,24 +8,19 @@ import java.awt.event.ActionListener;
  */
 public class TrenchMain extends JPanel {
     //instance fields for the general environment
-    public static final int FRAMEWIDTH = 1000, FRAMEHEIGHT = 600;
+    public static final int FRAMEWIDTH = 1200, FRAMEHEIGHT = 800;
     private Timer timer;
-    private boolean[] keys;
 
 
-
+    Sprite s = new Soldier(0, 150);
     //TESTING
-    private Sprite sprite;
 
     public TrenchMain(){
-
-        keys = new boolean[512]; //should be enough to hold any key code.
-
 
         timer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                s.update();
                 repaint(); //always the last line.  after updating, refresh the graphics.
             }
         });
@@ -41,11 +36,15 @@ public class TrenchMain extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+        s.draw(g2);
+        g2.fillRect(0, 0, 1200, 150);
+        g2.fillRect(0, 650, 1200, 150);
+
     }
 
     //sets ups the panel and frame.  Probably not much to modify here.
     public static void main(String[] args) {
-        JFrame window = new JFrame("Frogger!");
+        JFrame window = new JFrame("Trench Warfare");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setBounds(0, 0, FRAMEWIDTH, FRAMEHEIGHT + 22); //(x, y, w, h) 22 due to title bar.
 
