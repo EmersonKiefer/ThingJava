@@ -33,7 +33,10 @@ public class TrenchMain extends JPanel {
             }
         });
         timer.start();
-        renio = new MouseListener() {
+
+
+    public void setupMouseListener(){
+        addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 
@@ -42,6 +45,8 @@ public class TrenchMain extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
 
+
+                repaint();
             }
 
             @Override
@@ -58,8 +63,7 @@ public class TrenchMain extends JPanel {
             public void mouseExited(MouseEvent e) {
 
             }
-        }
-
+        });
     }
 
     //Our paint method.
