@@ -21,7 +21,7 @@ public class TrenchMain extends JPanel {
     Enemy e = new Enemy(1100, 150, 100, 100);
     //TESTING
 
-    public TrenchMain() {
+    public TrenchMain(){
         soldiers.add(s);
         enemies.add(e);
 
@@ -33,11 +33,9 @@ public class TrenchMain extends JPanel {
             }
         });
         timer.start();
-        setupMouseListener();
-    }
 
 
-    public void setupMouseListener() {
+    public void setupMouseListener(){
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -67,8 +65,6 @@ public class TrenchMain extends JPanel {
             }
         });
     }
-
-
 
     //Our paint method.
     public void paintComponent(Graphics g){
