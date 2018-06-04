@@ -17,24 +17,28 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private int soldierDamage, enemyDamage;
 
+    //gun icon on bottom
     Soldier test = new Soldier(5, 670, 100, 100);
+
+    //5 rows of soldiers
     Soldier s1 = new Soldier(0, 150, 100, 100);
     Soldier s2 = new Soldier(0, 250, 100, 100);
     Soldier s3 = new Soldier(0, 350, 100, 100);
     Soldier s4 = new Soldier(0, 450, 100, 100);
     Soldier s5 = new Soldier(0, 550, 100, 100);
 
-
+    //enemies
     Enemy e = new Enemy(1100, 150, 100, 100);
     //TESTING
 
     public TrenchMain() {
+        //adding 5 soldiers to their arraylist
         soldiers.add(s1);
         soldiers.add(s2);
         soldiers.add(s3);
         soldiers.add(s4);
         soldiers.add(s5);
-
+        //adding enemies to their arraylist
         enemies.add(e);
 
         for (Soldier s : soldiers)
@@ -112,7 +116,6 @@ public class TrenchMain extends JPanel {
 
         //Draw Sprites at end
         test.draw(g2);
-
 
     }
 

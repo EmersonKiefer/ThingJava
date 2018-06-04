@@ -27,7 +27,7 @@ public class Enemy extends Sprite {
     public int getDamage() {
         return damage;
     }
-        public void kill(){
+    public void kill(){
         isDead = true;
     }
     public boolean isDead(){
