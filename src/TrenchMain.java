@@ -17,22 +17,35 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
     Sprite test = new Sprite(5, 670, Sprite.NORTH);
-    Soldier s = new Soldier(0, 150, 100, 100);
+    Soldier s1 = new Soldier(0, 150, 100, 100);
+    Soldier s2 = new Soldier(0, 250, 100, 100);
+    Soldier s3 = new Soldier(0, 350, 100, 100);
+    Soldier s4 = new Soldier(0, 450, 100, 100);
+    Soldier s5 = new Soldier(0, 550, 100, 100);
+
+
     Enemy e = new Enemy(1100, 150, 100, 100);
     //TESTING
 
-    public TrenchMain(){
-        soldiers.add(s);
+    public TrenchMain() {
+        soldiers.add(s1);
+        soldiers.add(s2);
+        soldiers.add(s3);
+        soldiers.add(s4);
+        soldiers.add(s5);
+
         enemies.add(e);
 
         timer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                s.update();
+                for (Soldier s: soldiers)
+                    s.update();
                 repaint();
             }
         });
         timer.start();
+    }
 
 
     public void setupMouseListener(){
