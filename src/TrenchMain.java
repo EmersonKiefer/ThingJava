@@ -70,11 +70,15 @@ public class TrenchMain extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        for (Soldier s: soldiers)
-            s.draw(g2);
+        for (Soldier s: soldiers) {
+            if (!s.isDead())
+                s.draw(g2);
+        }
 
-        for (Enemy e: enemies)
-            e.draw(g2);
+        for (Enemy e: enemies) {
+            if (!e.isDead())
+                e.draw(g2);
+        }
 
         g2.fillRect(0, 0, 1200, 150);
         g2.fillRect(0, 650, 1200, 150);
