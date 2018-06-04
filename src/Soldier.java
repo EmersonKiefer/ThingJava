@@ -23,6 +23,9 @@ public class Soldier extends Sprite {
     public void increaseHealthBy(int amount){
         health = health + amount;
     }
+    public int getDamage(){
+       return damage;
+    }
     public void kill(){
         isDead = true;
     }

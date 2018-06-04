@@ -15,6 +15,7 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    private int soldierDamage, enemyDamage;
 
     Soldier test = new Soldier(5, 670, 100, 100);
     Soldier s1 = new Soldier(0, 150, 100, 100);
@@ -35,6 +36,11 @@ public class TrenchMain extends JPanel {
         soldiers.add(s5);
 
         enemies.add(e);
+
+        for (Soldier s : soldiers)
+            soldierDamage += s.getDamage();
+        for (Enemy e : enemies)
+            enemyDamage += e.getDamage();
 
         timer = new Timer(40, new ActionListener() {
             @Override

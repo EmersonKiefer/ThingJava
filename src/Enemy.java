@@ -24,7 +24,10 @@ public class Enemy extends Sprite {
     public void increaseHealthBy(int amount){
         health = health + amount;
     }
-    public void kill(){
+    public int getDamage() {
+        return damage;
+    }
+        public void kill(){
         isDead = true;
     }
     public boolean isDead(){
