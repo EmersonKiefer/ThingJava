@@ -16,7 +16,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
-    Sprite test = new Sprite(5, 670, Sprite.NORTH);
+    Soldier test = new Soldier(5, 670, 100, 100);
     Soldier s1 = new Soldier(0, 150, 100, 100);
     Soldier s2 = new Soldier(0, 250, 100, 100);
     Soldier s3 = new Soldier(0, 350, 100, 100);
