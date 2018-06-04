@@ -14,8 +14,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
-
-
+    Sprite test = new Sprite(5, 670, Sprite.NORTH);
     Soldier s = new Soldier(0, 150, 100, 100);
     //TESTING
 
@@ -43,6 +42,18 @@ public class TrenchMain extends JPanel {
         s.draw(g2);
         g2.fillRect(0, 0, 1200, 150);
         g2.fillRect(0, 650, 1200, 150);
+
+        //menu boxes
+        g2.setColor(new Color(255,255, 255));
+        for (int i = 5; i < 1100; i+=120) {
+            g2.fillRect(i, 670, 110, 110);
+        }
+
+        //menu end
+
+        //Draw Sprites at end
+        test.draw(g2);
+
 
     }
 

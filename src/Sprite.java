@@ -23,7 +23,7 @@ public class Sprite {
     public Sprite(int x, int y, int direction) {
         loc = new Point(x, y);
         dir = direction;
-        setPic("Rifle.png", NORTH);
+        setPic("SniperRifle.png", NORTH);
         speed = getBoundingRectangle().height;  //moves one height's worth by default.
 
         id = nextID;
