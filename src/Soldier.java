@@ -9,7 +9,7 @@ public class Soldier extends Sprite {
     public Soldier(int x, int y, int health, int damage){
         super(x, y, EAST);
         setPic("SniperRifle.png", EAST);
-        setSpeed(10);
+        setSpeed(15);
         this.health = health;
         this.damage = damage;
     }
@@ -26,6 +26,7 @@ public class Soldier extends Sprite {
     public int getDamage(){
        return damage;
     }
+    public int getHealth(){return health;}
     public void kill(){
         isDead = true;
     }

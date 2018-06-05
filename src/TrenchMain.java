@@ -15,7 +15,8 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-    private int soldierDamage, enemyDamage;
+    private int soldierHealth = 0, enemyHealth = 0;
+    private int soldierDamage = 0, enemyDamage = 0;
 
 
     //gun icon on bottom
@@ -52,17 +53,25 @@ public class TrenchMain extends JPanel {
         enemies.add(e4);
         enemies.add(e5);
 
+        //getting total health of soldiers and enemies
+        for (Soldier s : soldiers)
+            soldierHealth += s.getHealth();
+        for (Enemy e : enemies)
+            enemyHealth += e.getHealth();
 
+        //getting total damage of soldiers and enemies
         for (Soldier s : soldiers)
             soldierDamage += s.getDamage();
         for (Enemy e : enemies)
             enemyDamage += e.getDamage();
+
 
         timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 for (Soldier s: soldiers)
                     s.update();
+                battle();
                 repaint();
             }
         });
@@ -191,6 +200,7 @@ public class TrenchMain extends JPanel {
     }
 
     public void battle(){
+
 
     }
 
