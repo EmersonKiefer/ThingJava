@@ -71,6 +71,15 @@ public class TrenchMain extends JPanel {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON1) {
+                    if(e.getY() >= 25 && e.getY()<=125 && e.getX()>= 1075 && e.getX()<=1175) {//start stop button
+                        if(timer.isRunning())
+                            timer.stop();
+                        else
+                            timer.start();
+
+                    }
+
+
                     if (e.getY() >= 670 && e.getY() <= 780) {
                         if (e.getX() >= 5 && e.getX() <= 110) {//pistol
 
@@ -156,6 +165,7 @@ public class TrenchMain extends JPanel {
         for (int i = 5; i < 1100; i+=120) {
             g2.fillRect(i, 670, 110, 110);
         }
+        g2.fillRect(1075, 25, 100, 100);
 
         //menu end
 
