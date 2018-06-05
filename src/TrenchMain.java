@@ -165,9 +165,15 @@ public class TrenchMain extends JPanel {
         for (int i = 5; i < 1100; i+=120) {
             g2.fillRect(i, 670, 110, 110);
         }
+        //menu end
+
+        //start stop button
         g2.fillRect(1075, 25, 100, 100);
 
-        //menu end
+        //start stop end
+
+
+
 
         //Draw Sprites at end
         test.draw(g2);
