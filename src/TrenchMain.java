@@ -81,31 +81,31 @@ public class TrenchMain extends JPanel {
 
 
                     if (e.getY() >= 670 && e.getY() <= 780) {
-                        if (e.getX() >= 5 && e.getX() <= 110) {//pistol
+                        if (e.getX() >= 5 && e.getX() <= 110) {//knife
 
                             System.out.println("box1");
                         }
-                        if (e.getX() >= 125 && e.getX() <= 235) {//revolver
+                        if (e.getX() >= 125 && e.getX() <= 235) {//pistol
 
                             System.out.println("box2");
                         }
-                        if (e.getX() >= 245 && e.getX() <= 355) {//grenade
+                        if (e.getX() >= 245 && e.getX() <= 355) {//revolver
 
                             System.out.println("box3");
                         }
-                        if (e.getX() >= 365 && e.getX() <= 475) {//sniper
+                        if (e.getX() >= 365 && e.getX() <= 475) {//grenade
 
                             System.out.println("box4");
                         }
-                        if (e.getX() >= 485 && e.getX() <= 595) {//bazooka
+                        if (e.getX() >= 485 && e.getX() <= 595) {//sniper
 
                             System.out.println("box5");
                         }
-                        if (e.getX() >= 605 && e.getX() <= 715) {
+                        if (e.getX() >= 605 && e.getX() <= 715) {//bazooka
 
                             System.out.println("box6");
                         }
-                        if (e.getX() >= 725 && e.getX() <= 835) {
+                        if (e.getX() >= 725 && e.getX() <= 835) {//machine gun
 
                             System.out.println("box7");
                         }
