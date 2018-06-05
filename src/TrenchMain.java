@@ -15,6 +15,7 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0;
     private int soldierCount = 0, enemyCount = 0;
@@ -98,10 +99,18 @@ public class TrenchMain extends JPanel {
             public void mousePressed(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON1) {
                     if(e.getY() >= 25 && e.getY()<=125 && e.getX()>= 1075 && e.getX()<=1175) {//start stop button
-                        if(timer.isRunning())
+                        if(timer.isRunning()) {
+                            startstop = true;
                             timer.stop();
-                        else
+                            repaint();
+
+                        }
+                        else {
+                            startstop =false;
                             timer.start();
+                            repaint();
+
+                        }
 
                     }
 
@@ -194,7 +203,26 @@ public class TrenchMain extends JPanel {
         //menu end
 
         //start stop button
-        g2.fillRect(1075, 25, 100, 100);
+        int[] xVals = {1085, 1165, 1085};
+        int[] yVals = {35, 75, 115};
+        if(startstop) {
+            g2.setColor(new Color(255, 255, 255));
+            g2.fillRect(1075, 25, 100, 100);
+            g2.setColor(Color.green);
+            g2.fillPolygon(xVals, yVals, 3);
+            g2.setColor(Color.BLACK);
+            g2.drawPolygon(xVals, yVals, 3);
+        }
+        else{
+            g2.setColor(new Color(255, 255, 255));
+            g2.fillRect(1075, 25, 100, 100);
+            g2.setColor(Color.red);
+            g2.fillRect(1085, 35, 80, 80);
+            g2.setColor(Color.BLACK);
+            g2.drawRect(1085, 35, 80, 80);
+        }
+
+
 
         //start stop end
 
