@@ -16,7 +16,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private int soldierDamage, enemyDamage;
-    private boolean roundStart = false;
+
 
     //gun icon on bottom
     Soldier test = new Soldier(5, 670, 100, 100);
@@ -34,6 +34,7 @@ public class TrenchMain extends JPanel {
 
     public TrenchMain() {
         //adding 5 soldiers to their arraylist
+
         soldiers.add(s1);
         soldiers.add(s2);
         soldiers.add(s3);
@@ -55,10 +56,7 @@ public class TrenchMain extends JPanel {
                 repaint();
             }
         });
-        if (roundStart)
-            timer.start();
-        if (!roundStart)
-            timer.stop();
+
         setupMouseListener();
     }
 
