@@ -70,23 +70,23 @@ public class TrenchMain extends JPanel {
             public void mousePressed(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON1) {
                     if (e.getY() >= 670 && e.getY() <= 780) {
-                        if (e.getX() >= 5 && e.getX() <= 110) {
+                        if (e.getX() >= 5 && e.getX() <= 110) {//pistol
 
                             System.out.println("box1");
                         }
-                        if (e.getX() >= 125 && e.getX() <= 235) {
+                        if (e.getX() >= 125 && e.getX() <= 235) {//revolver
 
                             System.out.println("box2");
                         }
-                        if (e.getX() >= 245 && e.getX() <= 355) {
+                        if (e.getX() >= 245 && e.getX() <= 355) {//grenade
 
                             System.out.println("box3");
                         }
-                        if (e.getX() >= 365 && e.getX() <= 475) {
+                        if (e.getX() >= 365 && e.getX() <= 475) {//sniper
 
                             System.out.println("box4");
                         }
-                        if (e.getX() >= 485 && e.getX() <= 595) {
+                        if (e.getX() >= 485 && e.getX() <= 595) {//bazooka
 
                             System.out.println("box5");
                         }
