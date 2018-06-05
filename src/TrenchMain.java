@@ -15,11 +15,12 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-    private int soldierDamage, enemyDamage;
+    private int soldierHealth = 0, enemyHealth = 0;
+    private int soldierDamage = 0, enemyDamage = 0;
 
 
     //gun icon on bottom
-    Soldier test = new Soldier(5, 670, 100, 100);
+    Soldier test = new Soldier(5, 725, 100, 100);
 
     //5 rows of soldiers
     Soldier s1 = new Soldier(0, 150, 100, 100);
@@ -29,7 +30,12 @@ public class TrenchMain extends JPanel {
     Soldier s5 = new Soldier(0, 550, 100, 100);
 
     //enemies
-    Enemy e = new Enemy(1100, 150, 100, 100);
+    Enemy e1 = new Enemy(1100, 150, 100, 100);
+    Enemy e2 = new Enemy(1100, 250, 100, 100);
+    Enemy e3 = new Enemy(1100, 350, 100, 100);
+    Enemy e4 = new Enemy(1100, 450, 100, 100);
+    Enemy e5 = new Enemy(1100, 550, 100, 100);
+
     //TESTING
 
     public TrenchMain() {
@@ -41,18 +47,31 @@ public class TrenchMain extends JPanel {
         soldiers.add(s4);
         soldiers.add(s5);
         //adding enemies to their arraylist
-        enemies.add(e);
+        enemies.add(e1);
+        enemies.add(e2);
+        enemies.add(e3);
+        enemies.add(e4);
+        enemies.add(e5);
 
+        //getting total health of soldiers and enemies
+        for (Soldier s : soldiers)
+            soldierHealth += s.getHealth();
+        for (Enemy e : enemies)
+            enemyHealth += e.getHealth();
+
+        //getting total damage of soldiers and enemies
         for (Soldier s : soldiers)
             soldierDamage += s.getDamage();
         for (Enemy e : enemies)
             enemyDamage += e.getDamage();
 
-        timer = new Timer(40, new ActionListener() {
+
+        timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 for (Soldier s: soldiers)
                     s.update();
+                battle();
                 repaint();
             }
         });
@@ -165,9 +184,15 @@ public class TrenchMain extends JPanel {
         for (int i = 5; i < 1100; i+=120) {
             g2.fillRect(i, 670, 110, 110);
         }
+        //menu end
+
+        //start stop button
         g2.fillRect(1075, 25, 100, 100);
 
-        //menu end
+        //start stop end
+
+
+
 
         //Draw Sprites at end
         test.draw(g2);
@@ -175,6 +200,7 @@ public class TrenchMain extends JPanel {
     }
 
     public void battle(){
+
 
     }
 
