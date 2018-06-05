@@ -15,12 +15,11 @@ public class TrenchMain extends JPanel {
     private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-    private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0;
+    private int soldierDamage, enemyDamage;
 
 
     //gun icon on bottom
-    Soldier test = new Soldier(5, 725, 100, 100);
+    Soldier test = new Soldier(5, 670, 100, 100);
 
     //5 rows of soldiers
     Soldier s1 = new Soldier(0, 150, 100, 100);
@@ -30,12 +29,7 @@ public class TrenchMain extends JPanel {
     Soldier s5 = new Soldier(0, 550, 100, 100);
 
     //enemies
-    Enemy e1 = new Enemy(1100, 150, 100, 100);
-    Enemy e2 = new Enemy(1100, 250, 100, 100);
-    Enemy e3 = new Enemy(1100, 350, 100, 100);
-    Enemy e4 = new Enemy(1100, 450, 100, 100);
-    Enemy e5 = new Enemy(1100, 550, 100, 100);
-
+    Enemy e = new Enemy(1100, 150, 100, 100);
     //TESTING
 
     public TrenchMain() {
@@ -47,31 +41,18 @@ public class TrenchMain extends JPanel {
         soldiers.add(s4);
         soldiers.add(s5);
         //adding enemies to their arraylist
-        enemies.add(e1);
-        enemies.add(e2);
-        enemies.add(e3);
-        enemies.add(e4);
-        enemies.add(e5);
+        enemies.add(e);
 
-        //getting total health of soldiers and enemies
-        for (Soldier s : soldiers)
-            soldierHealth += s.getHealth();
-        for (Enemy e : enemies)
-            enemyHealth += e.getHealth();
-
-        //getting total damage of soldiers and enemies
         for (Soldier s : soldiers)
             soldierDamage += s.getDamage();
         for (Enemy e : enemies)
             enemyDamage += e.getDamage();
 
-
-        timer = new Timer(850, new ActionListener() {
+        timer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 for (Soldier s: soldiers)
                     s.update();
-                battle();
                 repaint();
             }
         });
@@ -100,31 +81,31 @@ public class TrenchMain extends JPanel {
 
 
                     if (e.getY() >= 670 && e.getY() <= 780) {
-                        if (e.getX() >= 5 && e.getX() <= 110) {//knife
+                        if (e.getX() >= 5 && e.getX() <= 110) {//pistol
 
                             System.out.println("box1");
                         }
-                        if (e.getX() >= 125 && e.getX() <= 235) {//pistol
+                        if (e.getX() >= 125 && e.getX() <= 235) {//revolver
 
                             System.out.println("box2");
                         }
-                        if (e.getX() >= 245 && e.getX() <= 355) {//revolver
+                        if (e.getX() >= 245 && e.getX() <= 355) {//grenade
 
                             System.out.println("box3");
                         }
-                        if (e.getX() >= 365 && e.getX() <= 475) {//grenade
+                        if (e.getX() >= 365 && e.getX() <= 475) {//sniper
 
                             System.out.println("box4");
                         }
-                        if (e.getX() >= 485 && e.getX() <= 595) {//sniper
+                        if (e.getX() >= 485 && e.getX() <= 595) {//bazooka
 
                             System.out.println("box5");
                         }
-                        if (e.getX() >= 605 && e.getX() <= 715) {//bazooka
+                        if (e.getX() >= 605 && e.getX() <= 715) {
 
                             System.out.println("box6");
                         }
-                        if (e.getX() >= 725 && e.getX() <= 835) {//machine gun
+                        if (e.getX() >= 725 && e.getX() <= 835) {
 
                             System.out.println("box7");
                         }
@@ -200,7 +181,6 @@ public class TrenchMain extends JPanel {
     }
 
     public void battle(){
-
 
     }
 
