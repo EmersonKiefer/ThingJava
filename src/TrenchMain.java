@@ -55,6 +55,7 @@ public class TrenchMain extends JPanel {
             }
         });
         timer.start();
+        setupMouseListener();
     }
 
 
@@ -67,9 +68,51 @@ public class TrenchMain extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON1) {
+                    if (e.getY() >= 670 && e.getY() <= 780) {
+                        if (e.getX() >= 5 && e.getX() <= 110) {
 
+                            System.out.println("box1");
+                        }
+                        if (e.getX() >= 125 && e.getX() <= 235) {
 
-                repaint();
+                            System.out.println("box2");
+                        }
+                        if (e.getX() >= 245 && e.getX() <= 355) {
+
+                            System.out.println("box3");
+                        }
+                        if (e.getX() >= 365 && e.getX() <= 475) {
+
+                            System.out.println("box4");
+                        }
+                        if (e.getX() >= 485 && e.getX() <= 595) {
+
+                            System.out.println("box5");
+                        }
+                        if (e.getX() >= 605 && e.getX() <= 715) {
+
+                            System.out.println("box6");
+                        }
+                        if (e.getX() >= 725 && e.getX() <= 835) {
+
+                            System.out.println("box7");
+                        }
+                        if (e.getX() >= 845 && e.getX() <= 955) {
+
+                            System.out.println("box8");
+                        }
+                        if (e.getX() >= 965 && e.getX() <= 1075) {
+
+                            System.out.println("box9");
+                        }
+                        if (e.getX() >= 1085 && e.getX() <= 1195) {
+
+                            System.out.println("box10");
+                        }
+                    }
+                }
+
             }
 
             @Override
