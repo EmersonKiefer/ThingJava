@@ -16,6 +16,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private int soldierDamage, enemyDamage;
+    private boolean roundStart = false;
 
     //gun icon on bottom
     Soldier test = new Soldier(5, 670, 100, 100);
@@ -159,6 +160,10 @@ public class TrenchMain extends JPanel {
 
         //Draw Sprites at end
         test.draw(g2);
+
+    }
+
+    public void battle(){
 
     }
 
