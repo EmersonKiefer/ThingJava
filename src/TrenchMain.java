@@ -55,7 +55,10 @@ public class TrenchMain extends JPanel {
                 repaint();
             }
         });
-        timer.start();
+        if (roundStart)
+            timer.start();
+        if (!roundStart)
+            timer.stop();
         setupMouseListener();
     }
 
