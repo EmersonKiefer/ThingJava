@@ -17,6 +17,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0;
+    private int soldierCount = 0, enemyCount = 0;
 
 
     //gun icon on bottom
@@ -36,6 +37,8 @@ public class TrenchMain extends JPanel {
     Enemy e4 = new Enemy(1100, 450, 100, 100);
     Enemy e5 = new Enemy(1100, 550, 100, 100);
 
+
+
     //TESTING
 
     public TrenchMain() {
@@ -52,6 +55,10 @@ public class TrenchMain extends JPanel {
         enemies.add(e3);
         enemies.add(e4);
         enemies.add(e5);
+
+        //get sizes of soldier and enemy arraylist
+        soldierCount = soldiers.size();
+        enemyCount = enemies.size();
 
         //getting total health of soldiers and enemies
         for (Soldier s : soldiers)
