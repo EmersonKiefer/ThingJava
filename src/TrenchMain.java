@@ -24,18 +24,18 @@ public class TrenchMain extends JPanel {
     Soldier test = new Soldier(5, 725, 100, 100);
 
     //5 rows of soldiers
-    Soldier s1 = new Soldier(0, 150, 100, 100);
-    Soldier s2 = new Soldier(0, 250, 100, 100);
-    Soldier s3 = new Soldier(0, 350, 100, 100);
-    Soldier s4 = new Soldier(0, 450, 100, 100);
-    Soldier s5 = new Soldier(0, 550, 100, 100);
+    Soldier s1 = new Soldier(0, 150, 100, 50);
+    Soldier s2 = new Soldier(0, 250, 100, 50);
+    Soldier s3 = new Soldier(0, 350, 100, 50);
+    Soldier s4 = new Soldier(0, 450, 100, 50);
+    Soldier s5 = new Soldier(0, 550, 100, 50);
 
     //enemies
-    Enemy e1 = new Enemy(1100, 150, 100, 100);
-    Enemy e2 = new Enemy(1100, 250, 100, 100);
-    Enemy e3 = new Enemy(1100, 350, 100, 100);
-    Enemy e4 = new Enemy(1100, 450, 100, 100);
-    Enemy e5 = new Enemy(1100, 550, 100, 100);
+    Enemy e1 = new Enemy(1100, 150, 100, 50);
+    Enemy e2 = new Enemy(1100, 250, 100, 50);
+    Enemy e3 = new Enemy(1100, 350, 100, 50);
+    Enemy e4 = new Enemy(1100, 450, 100, 50);
+    Enemy e5 = new Enemy(1100, 550, 100, 50);
 
 
 
@@ -207,6 +207,21 @@ public class TrenchMain extends JPanel {
     }
 
     public void battle(){
+        if (enemyCount > 0) {
+            for (Soldier s : soldiers) {
+                s.decreaseHealthBy(enemyDamage / enemyCount);
+                if (s.getHealth() <= 0)
+                    s.kill();
+            }
+        }
+        if (soldierCount > 0){
+            for (Enemy e : enemies){
+                e.decreaseHealthBy(soldierDamage / soldierCount);
+                if (e.getHealth() <= 0)
+                    e.kill();
+            }
+        }
+
 
 
     }
