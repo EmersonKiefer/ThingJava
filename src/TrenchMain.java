@@ -22,7 +22,8 @@ public class TrenchMain extends JPanel {
 
 
     //gun icon on bottom
-    Sprite test = new Soldier(5, 725, 100, 100);
+    Sprite test = new MeleeSoldier(5, 725, 100, 100);
+
 
 
     //5 rows of soldiers
