@@ -22,16 +22,16 @@ public class TrenchMain extends JPanel {
 
 
     //gun icon on bottom
-    Sprite test = new MeleeSoldier(5, 725, 100, 100);
+//    Sprite test = new MeleeSoldier(5, 725, 100, 100);
 
 
 
     //5 rows of soldiers
-    Soldier s1 = new Soldier(0, 150, 500, 50);
-    Soldier s2 = new Soldier(0, 250, 500, 50);
-    Soldier s3 = new Soldier(0, 350, 500, 50);
-    Soldier s4 = new Soldier(0, 450, 500, 50);
-    Soldier s5 = new Soldier(0, 550, 500, 50);
+    MeleeSoldier s1 = new MeleeSoldier(1);
+    MeleeSoldier s2 = new MeleeSoldier(2);
+    MeleeSoldier s3 = new MeleeSoldier(3);
+    MeleeSoldier s4 = new MeleeSoldier(4);
+    MeleeSoldier s5 = new MeleeSoldier(5);
 
     //enemies
     Enemy e1 = new Enemy(1100, 150, 500, 50);
@@ -77,6 +77,8 @@ public class TrenchMain extends JPanel {
             public void actionPerformed(ActionEvent actionEvent) {
                 for (Soldier s: soldiers)
                     s.update();
+                for (Enemy e : enemies)
+                    e.update();
                 battle();
                 repaint();
             }
@@ -228,7 +230,7 @@ public class TrenchMain extends JPanel {
 
 
         //Draw Sprites at end
-        test.draw(g2);
+//        test.draw(g2);
 
 
     }

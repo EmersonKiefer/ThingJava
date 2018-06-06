@@ -2,16 +2,15 @@
  * Created by student on 6/6/18.
  */
 public class BarbedWire extends Soldier {
-    int x, y;
+    int row;
     private boolean isDead = false;
 
 
 
-    public BarbedWire(int x, int y){
-        super(x, y, 500, 5);
+    public BarbedWire(int row){
+        super(row, 500, 5);
         setPic("barbedWire.png", EAST);
-        this.x = x;
-        this.y = y;
+        this.row = row;
         setSpeed(0);
     }
 

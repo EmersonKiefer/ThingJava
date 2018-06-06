@@ -5,11 +5,14 @@ public class Soldier extends Sprite {
 
     private int health, damage;
     private boolean isDead = false;
+    int row;
 
-    public Soldier(int x, int y, int health, int damage){
-        super(x, y, EAST);
+
+    public Soldier(int row, int health, int damage){
+        super(0, 100*row + 50, EAST);
         setPic("SoldierGuy.png", EAST);
         setSpeed(15);
+        this.row = row;
         this.health = health;
         this.damage = damage;
 

@@ -2,15 +2,14 @@
  * Created by student on 6/6/18.
  */
 public class PistolSoldier extends Soldier{
-    int x, y;
+    int row;
     private boolean isDead = false;
 
 
 
-    public PistolSoldier(int x, int y, int health, int damage){
-        super(x, y, 110, 15);
-        this.x = x;
-        this.y = y;
+    public PistolSoldier(int row){
+        super(row, 110, 15);
+        this.row = row;
         setSpeed(12);
     }
 }
