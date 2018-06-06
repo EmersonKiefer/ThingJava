@@ -5,6 +5,7 @@ public class BazookaMan extends Soldier {
     int x, y;
     private boolean isDead = false;
     int health = 5, damage;
+    //hey guys
 
 
 
