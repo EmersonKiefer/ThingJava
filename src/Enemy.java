@@ -9,7 +9,7 @@ public class Enemy extends Sprite {
     public Enemy(int x, int y, int health, int damage){
         super(x, y, WEST);
         setPic("SniperRifle.png", WEST);
-        setSpeed(0);
+        setSpeed(10);
         this.health = health;
         this.damage = damage;
 

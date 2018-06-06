@@ -76,6 +76,8 @@ public class TrenchMain extends JPanel {
             public void actionPerformed(ActionEvent actionEvent) {
                 for (Soldier s: soldiers)
                     s.update();
+                for (Enemy e : enemies)
+                    e.update();
                 battle();
                 repaint();
             }
