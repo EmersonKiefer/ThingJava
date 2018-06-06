@@ -8,9 +8,9 @@ public class Tank extends Soldier {
 
 
     public Tank (int x, int y, int health, int damage){
-        super(x, y, 5, 100);
+        super(x, y, 600, 35);
         this.x = x;
         this.y = y;
-        setSpeed(15);
+        setSpeed(13);
     }
 }

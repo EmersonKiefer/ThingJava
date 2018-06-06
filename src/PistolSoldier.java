@@ -8,7 +8,7 @@ public class PistolSoldier extends Soldier{
 
 
     public PistolSoldier(int x, int y, int health, int damage){
-        super(x, y, 15, 110);
+        super(x, y, 110, 15);
         this.x = x;
         this.y = y;
         setSpeed(12);

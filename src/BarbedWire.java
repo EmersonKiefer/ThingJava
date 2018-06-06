@@ -8,7 +8,7 @@ public class BarbedWire extends Soldier {
 
 
     public BarbedWire(int x, int y){
-        super(x, y, health, damage);
+        super(x, y, 500, 5);
         setPic("barbedWire.png", EAST);
         this.x = x;
         this.y = y;
