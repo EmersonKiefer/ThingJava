@@ -9,6 +9,7 @@ public class MeleeSoldier extends Soldier {
 
     public MeleeSoldier(int x, int y, int health, int damage){
         super(x, y, 5, 100);
+        setPic("mine.png", EAST);
         this.x = x;
         this.y = y;
         setSpeed(15);

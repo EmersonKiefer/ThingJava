@@ -11,6 +11,7 @@ public class BazookaMan extends Soldier {
 
     public BazookaMan(int x, int y, int health, int damage){
         super(x, y, health, 100);
+        setPic("bazooka1.png", EAST);
         this.x = x;
         this.y = y;
         setSpeed(15);
