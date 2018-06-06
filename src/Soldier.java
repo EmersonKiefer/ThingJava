@@ -8,7 +8,7 @@ public class Soldier extends Sprite {
 
     public Soldier(int x, int y, int health, int damage){
         super(x, y, EAST);
-        setPic("SniperRifle.png", EAST);
+        setPic("MeleeGuy.png", EAST);
         setSpeed(15);
         this.health = health;
         this.damage = damage;
