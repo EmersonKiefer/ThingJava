@@ -4,11 +4,12 @@
 public class BazookaMan extends Soldier {
     int x, y;
     private boolean isDead = false;
+    int health = 5, damage;
 
 
 
     public BazookaMan(int x, int y, int health, int damage){
-        super(x, y, 5, 100);
+        super(x, y, health, 100);
         this.x = x;
         this.y = y;
         setSpeed(15);
