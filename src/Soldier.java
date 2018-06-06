@@ -12,6 +12,7 @@ public class Soldier extends Sprite {
         setSpeed(15);
         this.health = health;
         this.damage = damage;
+
     }
     public void update(){
         super.update();
