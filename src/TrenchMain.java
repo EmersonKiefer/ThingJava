@@ -34,11 +34,12 @@ public class TrenchMain extends JPanel {
     Tank s5 = new Tank(5);
 
     //enemies
-    Enemy e1 = new Enemy(1, 500, 50);
-    Enemy e2 = new Enemy(2, 500, 50);
-    Enemy e3 = new Enemy(3, 500, 50);
-    Enemy e4 = new Enemy(4, 500, 50);
-    Enemy e5 = new Enemy(5, 500, 50);
+
+    Enemy e1 = new Enemy(1, 100, 5);
+    Enemy e2 = new Enemy(2, 100, 5);
+    Enemy e3 = new Enemy(3, 100, 5);
+    Enemy e4 = new Enemy(4, 100, 5);
+    Enemy e5 = new Enemy(5, 100, 5);
 
 
 
@@ -46,6 +47,8 @@ public class TrenchMain extends JPanel {
 
     public TrenchMain() {
         //adding 5 soldiers to their arraylist
+
+
 
         soldiers.add(s1);
         soldiers.add(s2);
