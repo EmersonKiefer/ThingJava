@@ -2,13 +2,11 @@
  * Created by student on 6/6/18.
  */
 public class Sniper extends Soldier {
-    int row;
-    private boolean isDead = false;
 
 
     public Sniper(int row) {
-        super(row, 30, 120);
-        this.row = row;
+        super(row, 120, 30);
+        setPic("rifleGuy.png", EAST);
         setSpeed(7);
     }
 }

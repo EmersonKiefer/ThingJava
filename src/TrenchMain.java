@@ -28,17 +28,17 @@ public class TrenchMain extends JPanel {
 
     //5 rows of soldiers
     MeleeSoldier s1 = new MeleeSoldier(1);
-    MeleeSoldier s2 = new MeleeSoldier(2);
-    MeleeSoldier s3 = new MeleeSoldier(3);
-    MeleeSoldier s4 = new MeleeSoldier(4);
-    MeleeSoldier s5 = new MeleeSoldier(5);
+    PistolSoldier s2 = new PistolSoldier(2);
+    Sniper s3 = new Sniper(3);
+    BazookaMan s4 = new BazookaMan(4);
+    Tank s5 = new Tank(5);
 
     //enemies
-    Enemy e1 = new Enemy(1100, 150, 500, 50);
-    Enemy e2 = new Enemy(1100, 250, 500, 50);
-    Enemy e3 = new Enemy(1100, 350, 500, 50);
-    Enemy e4 = new Enemy(1100, 450, 500, 50);
-    Enemy e5 = new Enemy(1100, 550, 500, 50);
+    Enemy e1 = new Enemy(1, 500, 50);
+    Enemy e2 = new Enemy(2, 500, 50);
+    Enemy e3 = new Enemy(3, 500, 50);
+    Enemy e4 = new Enemy(4, 500, 50);
+    Enemy e5 = new Enemy(5, 500, 50);
 
 
 

@@ -6,9 +6,9 @@ public class Enemy extends Sprite {
     private int health, damage;
     private boolean isDead = false;
 
-    public Enemy(int x, int y, int health, int damage){
-        super(x, y, WEST);
-        setPic("SniperRifle.png", WEST);
+    public Enemy(int row, int health, int damage){
+        super(1100, 100*row + 65, WEST);
+        setPic("soldierGuy.png", WEST);
         setSpeed(10);
         this.health = health;
         this.damage = damage;
