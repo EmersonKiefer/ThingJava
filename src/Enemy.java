@@ -4,6 +4,7 @@
 public class Enemy extends Sprite {
 
     private int health, damage;
+    //a
     private boolean isDead = false;
 
     public Enemy(int row, int health, int damage){
