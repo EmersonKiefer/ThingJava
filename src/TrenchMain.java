@@ -240,21 +240,21 @@ public class TrenchMain extends JPanel {
         }
 
         if(knifePic != null)
-            g2.drawImage(knifePic, 5, 670, null);
+            g2.drawImage(knifePic, 5, 675, null);
         if(revolverPic != null)
-            g2.drawImage(revolverPic, 125, 670, null);
+            g2.drawImage(revolverPic, 125, 675, null);
         if(riflePic != null)
-            g2.drawImage(riflePic, 245, 670, null);
+            g2.drawImage(riflePic, 245, 680, null);
         if(bazookaPic != null)
             g2.drawImage(bazookaPic, 365, 670, null);
         //missing tank
         if(wirePic != null)
-            g2.drawImage(wirePic, 605, 670, null);
+            g2.drawImage(wirePic, 625, 675, null);
         if(wallPic != null)
-            g2.drawImage(wallPic, 725, 670, null);
+            g2.drawImage(wallPic, 745, 675, null);
 
         if(machineGunPic != null)
-            g2.drawImage(machineGunPic, 845, 670, null);
+            g2.drawImage(machineGunPic, 855, 670, null);
 
 
 
