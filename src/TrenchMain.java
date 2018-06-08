@@ -1,9 +1,12 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +22,7 @@ public class TrenchMain extends JPanel {
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0;
     private int soldierCount = 0, enemyCount = 0;
-
+    private BufferedImage knifePic;
 
     //gun icon on bottom
 //    Sprite test = new MeleeSoldier(5, 725, 100, 100);
@@ -48,6 +51,11 @@ public class TrenchMain extends JPanel {
     public TrenchMain() {
         //adding 5 soldiers to their arraylist
 
+        try {
+            knifePic = ImageIO.read(new File("res/" + "knife.png"));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
 
         soldiers.add(s1);
@@ -224,6 +232,8 @@ public class TrenchMain extends JPanel {
             g2.setColor(Color.BLACK);
             g2.drawRect(1085, 35, 80, 80);
         }
+        if(knifePic != null)
+            g2.drawImage(knifePic, 100, 300, null);
 
 
 
