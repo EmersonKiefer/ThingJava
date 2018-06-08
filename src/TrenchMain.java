@@ -242,15 +242,19 @@ public class TrenchMain extends JPanel {
         if (enemyCount > 0) {
             for (Soldier s : soldiers) {
                 s.decreaseHealthBy(enemyDamage / enemyCount);
-                if (s.getHealth() <= 0)
+                if (s.getHealth() <= 0) {
                     s.kill();
+                    soldierCount--;
+                }
             }
         }
         if (soldierCount > 0){
             for (Enemy e : enemies){
                 e.decreaseHealthBy(soldierDamage / soldierCount);
-                if (e.getHealth() <= 0)
+                if (e.getHealth() <= 0) {
                     e.kill();
+                    enemyCount--;
+                }
             }
         }
     }

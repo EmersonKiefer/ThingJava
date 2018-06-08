@@ -7,6 +7,6 @@ public class BazookaMan extends Soldier {
     public BazookaMan(int row){
         super(row, 200, 50);
         setPic("bazookaGuy.png", EAST);
-        setSpeed(3);
+        setSpeed(5);
     }
 }
