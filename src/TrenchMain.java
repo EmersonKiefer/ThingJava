@@ -237,7 +237,20 @@ public class TrenchMain extends JPanel {
             g2.setColor(Color.BLACK);
             g2.drawRect(1085, 35, 80, 80);
         }
+
         if(knifePic != null)
+            g2.drawImage(knifePic, 5, 670, null);
+        if(wirePic != null)
+            g2.drawImage(wirePic, 100, 300, null);
+        if(bazookaPic != null)
+            g2.drawImage(bazookaPic, 100, 300, null);
+        if(machineGunPic != null)
+            g2.drawImage(machineGunPic, 100, 300, null);
+        if(revolverPic != null)
+            g2.drawImage(revolverPic, 100, 300, null);
+        if(riflePic != null)
+            g2.drawImage(riflePic, 100, 300, null);
+
             g2.drawImage(knifePic, 5, 675, null);
 
 
