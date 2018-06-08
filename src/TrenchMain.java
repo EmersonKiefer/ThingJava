@@ -22,7 +22,7 @@ public class TrenchMain extends JPanel {
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0;
     private int soldierCount = 0, enemyCount = 0;
-    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic;
+    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic;
 
     //gun icon on bottom
 //    Sprite test = new MeleeSoldier(5, 725, 100, 100);
@@ -58,6 +58,7 @@ public class TrenchMain extends JPanel {
             machineGunPic = ImageIO.read(new File("res/" + "machineGun.png"));
             revolverPic = ImageIO.read(new File("res/" + "revolver.png"));
             riflePic = ImageIO.read(new File("res/" + "sniperRifle.png"));
+            wallPic = ImageIO.read(new File("res/" + "wall.png"));
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -240,18 +241,24 @@ public class TrenchMain extends JPanel {
 
         if(knifePic != null)
             g2.drawImage(knifePic, 5, 670, null);
-        if(wirePic != null)
-            g2.drawImage(wirePic, 100, 300, null);
-        if(bazookaPic != null)
-            g2.drawImage(bazookaPic, 100, 300, null);
-        if(machineGunPic != null)
-            g2.drawImage(machineGunPic, 100, 300, null);
         if(revolverPic != null)
-            g2.drawImage(revolverPic, 100, 300, null);
+            g2.drawImage(revolverPic, 125, 670, null);
         if(riflePic != null)
-            g2.drawImage(riflePic, 100, 300, null);
+            g2.drawImage(riflePic, 245, 670, null);
+        if(bazookaPic != null)
+            g2.drawImage(bazookaPic, 365, 670, null);
+        //missing tank
+        if(wirePic != null)
+            g2.drawImage(wirePic, 605, 670, null);
+        if(wallPic != null)
+            g2.drawImage(wallPic, 725, 670, null);
 
-            g2.drawImage(knifePic, 5, 675, null);
+        if(machineGunPic != null)
+            g2.drawImage(machineGunPic, 845, 670, null);
+
+
+
+
 
 
 
