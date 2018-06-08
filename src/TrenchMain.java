@@ -22,7 +22,7 @@ public class TrenchMain extends JPanel {
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0;
     private int soldierCount = 0, enemyCount = 0;
-    private BufferedImage knifePic;
+    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic;
 
     //gun icon on bottom
 //    Sprite test = new MeleeSoldier(5, 725, 100, 100);
@@ -53,6 +53,11 @@ public class TrenchMain extends JPanel {
 
         try {
             knifePic = ImageIO.read(new File("res/" + "knife.png"));
+            wirePic = ImageIO.read(new File("res/" + "barbedWire.png"));
+            bazookaPic = ImageIO.read(new File("res/" + "bazooka.png"));
+            machineGunPic = ImageIO.read(new File("res/" + "machineGun.png"));
+            revolverPic = ImageIO.read(new File("res/" + "revolver.png"));
+            riflePic = ImageIO.read(new File("res/" + "sniperRifle.png"));
         }catch(Exception e){
             e.printStackTrace();
         }
