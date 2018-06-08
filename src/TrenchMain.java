@@ -238,17 +238,14 @@ public class TrenchMain extends JPanel {
             g2.drawRect(1085, 35, 80, 80);
         }
         if(knifePic != null)
-            g2.drawImage(knifePic, 100, 300, null);
+            g2.drawImage(knifePic, 5, 675, null);
+
+
 
 
 
         //start stop end
 
-
-
-
-        //Draw Sprites at end
-//        test.draw(g2);
 
 
     }
