@@ -20,9 +20,10 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0;
+    private int soldierDamage = 0, enemyDamage = 0, column = 1;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic;
+
 
     //gun icon on bottom
 //    Sprite test = new MeleeSoldier(5, 725, 100, 100);
@@ -65,7 +66,7 @@ public class TrenchMain extends JPanel {
         }
 
 
-        soldiers.add(s1);
+//        soldiers.add(s1);
         soldiers.add(s2);
         soldiers.add(s3);
         soldiers.add(s4);
@@ -131,27 +132,40 @@ public class TrenchMain extends JPanel {
                         }
 
                     }
+                    if(column >=5)
+                        column=1;
 
 
                     if (e.getY() >= 670 && e.getY() <= 780) {
                         if (e.getX() >= 5 && e.getX() <= 110) {//melee
+                            soldiers.add(new MeleeSoldier(column));
+                            column++;
+                            repaint();
 
                             System.out.println("box1");
                         }
                         if (e.getX() >= 125 && e.getX() <= 235) {//pistol
-
+                            soldiers.add(new PistolSoldier(column));
+                            column ++;
+                            repaint();
                             System.out.println("box2");
                         }
                         if (e.getX() >= 245 && e.getX() <= 355) {//sniper
-
+                            soldiers.add(new Sniper(column));
+                            column ++;
+                            repaint();
                             System.out.println("box3");
                         }
                         if (e.getX() >= 365 && e.getX() <= 475) {//bazooka
-
+                            soldiers.add(new BazookaMan(column));
+                            column ++;
+                            repaint();
                             System.out.println("box4");
                         }
                         if (e.getX() >= 485 && e.getX() <= 595) {//tank
-
+                            soldiers.add(new Tank(column));
+                            column ++;
+                            repaint();
                             System.out.println("box5");
                         }
                         if (e.getX() >= 605 && e.getX() <= 715) {//barbed wire
