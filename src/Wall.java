@@ -3,16 +3,16 @@ import java.awt.*;
 /**
  * Created by student on 6/6/18.
  */
-public class BarbedWire extends Soldier {
+public class Wall extends Soldier {
     int row;
     private boolean isDead = false;
 
 
 
-    public BarbedWire(int row){
+    public Wall(int row){
         super(row, 500, 5);
-        setPic("barbedWire.png", EAST);
-        setLoc(new Point(100,(int)(getLoc().getY())));
+        setPic("wall.png", EAST);
+        setLoc(new Point(80,(int)(getLoc().getY())));
         this.row = row;
         setSpeed(0);
     }
