@@ -20,9 +20,9 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, column = 1;
+    private int soldierDamage = 0, enemyDamage = 0, column = 1, money = 0;
     private int soldierCount = 0, enemyCount = 0;
-    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic;
+    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic;
 
 
     //gun icon on bottom
@@ -61,6 +61,8 @@ public class TrenchMain extends JPanel {
             riflePic = ImageIO.read(new File("res/" + "sniperRifle.png"));
             wallPic = ImageIO.read(new File("res/" + "wall.png"));
             tankPic = ImageIO.read(new File("res/" + "tankGuy.png"));
+            backgroundPic = ImageIO.read(new File("res/" + "background.png"));
+
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -214,7 +216,8 @@ public class TrenchMain extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-
+        if(backgroundPic != null)
+            g2.drawImage(backgroundPic, 0, -20, null);
         for (Soldier s: soldiers) {
             if (!s.isDead())
                 s.draw(g2);
@@ -225,7 +228,7 @@ public class TrenchMain extends JPanel {
                 e.draw(g2);
         }
 
-        g2.fillRect(0, 0, 1200, 150);
+//        g2.fillRect(0, 0, 1200, 150);
         g2.fillRect(0, 650, 1200, 150);
 
         //menu boxes
