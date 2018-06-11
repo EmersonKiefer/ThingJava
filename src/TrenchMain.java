@@ -171,10 +171,14 @@ public class TrenchMain extends JPanel {
                             System.out.println("box5");
                         }
                         if (e.getX() >= 605 && e.getX() <= 715) {//barbed wire
+                            soldiers.add(new BarbedWire(column));
 
+                            column ++;
+                            repaint();
                             System.out.println("box6");
                         }
                         if (e.getX() >= 725 && e.getX() <= 835) {//wall
+
 
                             System.out.println("box7");
                         }
