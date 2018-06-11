@@ -20,7 +20,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, column = 1, money = 0;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, money = 0;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic;
 
@@ -134,51 +134,52 @@ public class TrenchMain extends JPanel {
                         }
 
                     }
-                    if(column >5)
-                        column=1;
+                    if(row >5)
+                        row=1;
 
 
                     if (e.getY() >= 670 && e.getY() <= 780) {
                         if (e.getX() >= 5 && e.getX() <= 110) {//melee
-                            soldiers.add(new MeleeSoldier(column));
-                            column++;
+                            soldiers.add(new MeleeSoldier(row));
+                            row++;
                             repaint();
 
                             System.out.println("box1");
                         }
                         if (e.getX() >= 125 && e.getX() <= 235) {//pistol
-                            soldiers.add(new PistolSoldier(column));
-                            column ++;
+                            soldiers.add(new PistolSoldier(row));
+                            row ++;
                             repaint();
                             System.out.println("box2");
                         }
                         if (e.getX() >= 245 && e.getX() <= 355) {//sniper
-                            soldiers.add(new Sniper(column));
-                            column ++;
+                            soldiers.add(new Sniper(row));
+                            row ++;
                             repaint();
                             System.out.println("box3");
                         }
                         if (e.getX() >= 365 && e.getX() <= 475) {//bazooka
-                            soldiers.add(new BazookaMan(column));
-                            column ++;
+                            soldiers.add(new BazookaMan(row));
+                            row ++;
                             repaint();
                             System.out.println("box4");
                         }
                         if (e.getX() >= 485 && e.getX() <= 595) {//tank
-                            soldiers.add(new Tank(column));
-                            column ++;
+                            soldiers.add(new Tank(row));
+                            row ++;
                             repaint();
                             System.out.println("box5");
                         }
                         if (e.getX() >= 605 && e.getX() <= 715) {//barbed wire
-                            soldiers.add(new BarbedWire(column));
-
-                            column ++;
+                            soldiers.add(new BarbedWire(row));
+                            row ++;
                             repaint();
                             System.out.println("box6");
                         }
                         if (e.getX() >= 725 && e.getX() <= 835) {//wall
-
+                            soldiers.add(new Wall(row));
+                            row ++;
+                            repaint();
 
                             System.out.println("box7");
                         }
