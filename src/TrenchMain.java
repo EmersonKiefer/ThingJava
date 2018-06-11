@@ -221,7 +221,7 @@ public class TrenchMain extends JPanel {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
         if(backgroundPic != null)
-            g2.drawImage(backgroundPic, 0, -20, null);
+            g2.drawImage(backgroundPic, 0, -40, null);
         for (Soldier s: soldiers) {
             if (!s.isDead())
                 s.draw(g2);
