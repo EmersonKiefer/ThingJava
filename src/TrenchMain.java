@@ -132,7 +132,7 @@ public class TrenchMain extends JPanel {
                         }
 
                     }
-                    if(column >=5)
+                    if(column >5)
                         column=1;
 
 
