@@ -41,11 +41,11 @@ public class TrenchMain extends JPanel {
 
     //enemies
 
-    Enemy e1 = new Enemy(1, 100, 5);
-    Enemy e2 = new Enemy(2, 100, 5);
-    Enemy e3 = new Enemy(3, 100, 5);
-    Enemy e4 = new Enemy(4, 100, 5);
-    Enemy e5 = new Enemy(5, 100, 5);
+    Enemy e1 = new Enemy(1, 50, 5);
+    Enemy e2 = new Enemy(2, 50, 5);
+    Enemy e3 = new Enemy(3, 50, 5);
+    Enemy e4 = new Enemy(4, 50, 5);
+    Enemy e5 = new Enemy(5, 50, 5);
 
 
 
@@ -70,7 +70,7 @@ public class TrenchMain extends JPanel {
         }
 
 
-        soldiers.add(s1);
+//        soldiers.add(s1);
 //        soldiers.add(s2);
 //        soldiers.add(s3);
 //        soldiers.add(s4);
@@ -272,32 +272,32 @@ public class TrenchMain extends JPanel {
         g2.setColor(Color.BLACK);
         g2.drawString("Damage: 5", 5, 740);
         g2.drawString("Health: 100", 5, 755);
-        g2.drawString("Cost: ", 5, 770);
+        g2.drawString("Cost: 100", 5, 770);
         if(revolverPic != null)
             g2.drawImage(revolverPic, 125, 675, null);
         g2.drawString("Damage: 15", 125, 740);
         g2.drawString("Health: 110", 125, 755);
-        g2.drawString("Cost: ", 125, 770);
+        g2.drawString("Cost: 200", 125, 770);
         if(riflePic != null)
             g2.drawImage(riflePic, 245, 680, null);
         g2.drawString("Damage: 30", 245, 740);
         g2.drawString("Health: 120", 245, 755);
-        g2.drawString("Cost: ", 245, 770);
+        g2.drawString("Cost: 500", 245, 770);
         if(bazookaPic != null)
             g2.drawImage(bazookaPic, 365, 670, null);
         g2.drawString("Damage: 50", 365, 740);
         g2.drawString("Health: 200", 365, 755);
-        g2.drawString("Cost: 5", 365, 770);
+        g2.drawString("Cost: 1000", 365, 770);
         if(tankPic != null)
             g2.drawImage(tankPic, 485, 680, null);
-        g2.drawString("Damage: 5", 485, 740);
-        g2.drawString("Health: 5", 485, 755);
-        g2.drawString("Cost: 5", 485, 770);
+        g2.drawString("Damage: 35", 485, 740);
+        g2.drawString("Health: 600", 485, 755);
+        g2.drawString("Cost: 3000", 485, 770);
         if(wirePic != null)
             g2.drawImage(wirePic, 625, 675, null);
-        g2.drawString("Damage: 1", 605, 740);
-        g2.drawString("Health: 200", 605, 755);
-        g2.drawString("Cost: ", 605, 770);
+        g2.drawString("Damage: 1", 625, 740);
+        g2.drawString("Health: 200", 625, 755);
+        g2.drawString("Cost: 150", 625, 770);
         if(wallPic != null)
             g2.drawImage(wallPic, 745, 675, null);
         g2.drawString("Damage: 0", 725, 740);
