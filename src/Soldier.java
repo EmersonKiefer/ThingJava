@@ -38,6 +38,9 @@ public class Soldier extends Sprite {
     public boolean isDead(){
         return isDead;
     }
+    public int getCost(){
+        return cost;
+    }
 
 
 }
