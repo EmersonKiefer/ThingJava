@@ -83,21 +83,23 @@ public class TrenchMain extends JPanel {
         enemies.add(e5);
 
         //get sizes of soldier and enemy arraylist
-        soldierCount = soldiers.size();
-        enemyCount = enemies.size();
+
 
 
 
         //getting total damage of soldiers and enemies
-        for (Soldier s : soldiers)
-            soldierDamage += s.getDamage();
-        for (Enemy e : enemies)
-            enemyDamage += e.getDamage();
+
 
 
         timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                soldierCount = soldiers.size();
+                enemyCount = enemies.size();
+                for (Soldier s : soldiers)
+                    soldierDamage += s.getDamage();
+                for (Enemy e : enemies)
+                    enemyDamage += e.getDamage();
                 for (Soldier s: soldiers)
                     s.update();
                 for (Enemy e : enemies)
