@@ -223,7 +223,7 @@ public class TrenchMain extends JPanel {
         Graphics2D g2 = (Graphics2D)g;
         if(backgroundPic != null)
             g2.drawImage(backgroundPic, 0, -40, null);
-        for (Soldier s: soldiers) {
+        for (Soldier s: soldiers) {//penis
             if (!s.isDead())
                 s.draw(g2);
         }
