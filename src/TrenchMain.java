@@ -267,17 +267,35 @@ public class TrenchMain extends JPanel {
 
         if(knifePic != null)
             g2.drawImage(knifePic, 5, 675, null);
-//        g2.drawString("Damage: ");
+        g2.setColor(Color.BLACK);
+        g2.drawString("Damage: 5", 5, 740);
+        g2.drawString("Health: 5", 5, 755);
+        g2.drawString("Cost: 5", 5, 770);
         if(revolverPic != null)
             g2.drawImage(revolverPic, 125, 675, null);
+        g2.drawString("Damage: 5", 125, 740);
+        g2.drawString("Health: 5", 125, 755);
+        g2.drawString("Cost: 5", 125, 770);
         if(riflePic != null)
             g2.drawImage(riflePic, 245, 680, null);
+        g2.drawString("Damage: 5", 245, 740);
+        g2.drawString("Health: 5", 245, 755);
+        g2.drawString("Cost: 5", 245, 770);
         if(bazookaPic != null)
             g2.drawImage(bazookaPic, 365, 670, null);
+        g2.drawString("Damage: 5", 365, 740);
+        g2.drawString("Health: 5", 365, 755);
+        g2.drawString("Cost: 5", 365, 770);
         if(tankPic != null)
             g2.drawImage(tankPic, 485, 680, null);
+        g2.drawString("Damage: 5", 485, 740);
+        g2.drawString("Health: 5", 485, 755);
+        g2.drawString("Cost: 5", 485, 770);
         if(wirePic != null)
             g2.drawImage(wirePic, 625, 675, null);
+        g2.drawString("Damage: 5", 625, 740);
+        g2.drawString("Health: 5", 625, 755);
+        g2.drawString("Cost: 5", 625, 770);
         if(wallPic != null)
             g2.drawImage(wallPic, 745, 675, null);
 
