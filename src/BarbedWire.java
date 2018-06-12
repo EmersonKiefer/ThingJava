@@ -10,7 +10,7 @@ public class BarbedWire extends Soldier {
 
 
     public BarbedWire(int row){
-        super(row, 200, 1, 150);
+        super(row, 200, 1, 150, 0);
         setPic("barbedWire.png", EAST);
         setLoc(new Point(100,(int)(getLoc().getY())));
         this.row = row;
