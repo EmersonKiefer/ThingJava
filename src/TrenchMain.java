@@ -41,7 +41,7 @@ public class TrenchMain extends JPanel {
 
     //enemies
 
-    Enemy e1 = new Enemy(1, 50, 5);
+    Enemy e1 = new Enemy(1, 100, 50);
     Enemy e2 = new Enemy(2, 50, 5);
     Enemy e3 = new Enemy(3, 50, 5);
     Enemy e4 = new Enemy(4, 50, 5);
@@ -97,6 +97,8 @@ public class TrenchMain extends JPanel {
             public void actionPerformed(ActionEvent actionEvent) {
                 soldierCount = soldiers.size();
                 enemyCount = enemies.size();
+                soldierDamage = 0;
+                enemyDamage = 0;
                 for (Soldier s : soldiers)
                     soldierDamage += s.getDamage();
                 for (Enemy e : enemies)
