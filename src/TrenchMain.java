@@ -22,7 +22,7 @@ public class TrenchMain extends JPanel {
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 0;
     private int soldierCount = 0, enemyCount = 0;
-    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic;
+    private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
 
 
 
@@ -63,6 +63,7 @@ public class TrenchMain extends JPanel {
             riflePic = ImageIO.read(new File("res/" + "sniperRifle.png"));
             wallPic = ImageIO.read(new File("res/" + "wall.png"));
             tankPic = ImageIO.read(new File("res/" + "tankGuy.png"));
+            minePic = ImageIO.read(new File("res/" + "mine.png"));
             backgroundPic = ImageIO.read(new File("res/" + "background.png"));
 
         }catch(Exception e){
@@ -227,7 +228,7 @@ public class TrenchMain extends JPanel {
         Graphics2D g2 = (Graphics2D)g;
         if(backgroundPic != null)
             g2.drawImage(backgroundPic, 0, -40, null);
-        for (Soldier s: soldiers) {//penis
+        for (Soldier s: soldiers) {
             if (!s.isDead())
                 s.draw(g2);
         }
@@ -308,6 +309,8 @@ public class TrenchMain extends JPanel {
         g2.drawString("Damage: 5", 845, 740);
         g2.drawString("Health: 5", 845, 755);
         g2.drawString("Cost: 5", 845, 770);
+        if(minePic != null)
+            g2.drawImage(minePic, 975, 670, null);
 
 
 
