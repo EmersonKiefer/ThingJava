@@ -70,11 +70,11 @@ public class TrenchMain extends JPanel {
         }
 
 
-//        soldiers.add(s1);
-        soldiers.add(s2);
-        soldiers.add(s3);
-        soldiers.add(s4);
-        soldiers.add(s5);
+        soldiers.add(s1);
+//        soldiers.add(s2);
+//        soldiers.add(s3);
+//        soldiers.add(s4);
+//        soldiers.add(s5);
         //adding enemies to their arraylist
         enemies.add(e1);
         enemies.add(e2);
