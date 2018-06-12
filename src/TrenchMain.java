@@ -23,6 +23,8 @@ public class TrenchMain extends JPanel {
     private int soldierDamage = 0, enemyDamage = 0, row = 1, money = 0;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic;
+    private int level = 1;
+
 
 
     //gun icon on bottom
