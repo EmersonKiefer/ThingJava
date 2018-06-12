@@ -265,6 +265,7 @@ public class TrenchMain extends JPanel {
 
         if(knifePic != null)
             g2.drawImage(knifePic, 5, 675, null);
+//        g2.drawString("Damage: ");
         if(revolverPic != null)
             g2.drawImage(revolverPic, 125, 675, null);
         if(riflePic != null)
