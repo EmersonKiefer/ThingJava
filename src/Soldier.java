@@ -3,16 +3,17 @@
  */
 public class Soldier extends Sprite {
 
-    private int health, damage;
+    private int health, damage, cost;
     private boolean isDead = false;
 
 
-    public Soldier(int row, int health, int damage){
+    public Soldier(int row, int health, int damage, int cost){
         super(0, 100*row + 65, EAST);
         setPic("SoldierGuy.png", EAST);
         setSpeed(15);
         this.health = health;
         this.damage = damage;
+        this.cost = cost;
 
     }
     public void update(){

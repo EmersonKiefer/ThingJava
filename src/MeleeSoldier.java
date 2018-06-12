@@ -6,7 +6,7 @@ public class MeleeSoldier extends Soldier {
 
 
     public MeleeSoldier(int row){
-        super(row, 100, 5);
+        super(row, 100, 5, 100);
         setPic("meleeGuy.png", EAST);
         setSpeed(15);
     }
