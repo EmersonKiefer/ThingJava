@@ -269,22 +269,22 @@ public class TrenchMain extends JPanel {
             g2.drawImage(knifePic, 5, 675, null);
         g2.setColor(Color.BLACK);
         g2.drawString("Damage: 5", 5, 740);
-        g2.drawString("Health: 5", 5, 755);
-        g2.drawString("Cost: 5", 5, 770);
+        g2.drawString("Health: 100", 5, 755);
+        g2.drawString("Cost: ", 5, 770);
         if(revolverPic != null)
             g2.drawImage(revolverPic, 125, 675, null);
-        g2.drawString("Damage: 5", 125, 740);
-        g2.drawString("Health: 5", 125, 755);
-        g2.drawString("Cost: 5", 125, 770);
+        g2.drawString("Damage: 15", 125, 740);
+        g2.drawString("Health: 110", 125, 755);
+        g2.drawString("Cost: ", 125, 770);
         if(riflePic != null)
             g2.drawImage(riflePic, 245, 680, null);
-        g2.drawString("Damage: 5", 245, 740);
-        g2.drawString("Health: 5", 245, 755);
-        g2.drawString("Cost: 5", 245, 770);
+        g2.drawString("Damage: 30", 245, 740);
+        g2.drawString("Health: 120", 245, 755);
+        g2.drawString("Cost: ", 245, 770);
         if(bazookaPic != null)
             g2.drawImage(bazookaPic, 365, 670, null);
-        g2.drawString("Damage: 5", 365, 740);
-        g2.drawString("Health: 5", 365, 755);
+        g2.drawString("Damage: 50", 365, 740);
+        g2.drawString("Health: 200", 365, 755);
         g2.drawString("Cost: 5", 365, 770);
         if(tankPic != null)
             g2.drawImage(tankPic, 485, 680, null);
@@ -293,13 +293,19 @@ public class TrenchMain extends JPanel {
         g2.drawString("Cost: 5", 485, 770);
         if(wirePic != null)
             g2.drawImage(wirePic, 625, 675, null);
-        g2.drawString("Damage: 5", 625, 740);
-        g2.drawString("Health: 5", 625, 755);
-        g2.drawString("Cost: 5", 625, 770);
+        g2.drawString("Damage: 1", 605, 740);
+        g2.drawString("Health: 200", 605, 755);
+        g2.drawString("Cost: ", 605, 770);
         if(wallPic != null)
             g2.drawImage(wallPic, 745, 675, null);
+        g2.drawString("Damage: 0", 725, 740);
+        g2.drawString("Health: 500", 725, 755);
+        g2.drawString("Cost: ", 725, 770);
         if(machineGunPic != null)
             g2.drawImage(machineGunPic, 855, 670, null);
+        g2.drawString("Damage: 5", 845, 740);
+        g2.drawString("Health: 5", 845, 755);
+        g2.drawString("Cost: 5", 845, 770);
 
 
 
