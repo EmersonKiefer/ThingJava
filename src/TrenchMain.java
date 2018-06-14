@@ -283,12 +283,12 @@ public class TrenchMain extends JPanel {
         g2.setColor(Color.BLACK);
         g2.drawString("Damage: 5", 5, 740);
         g2.drawString("Health: 100", 5, 755);
-        g2.drawString("Cost: 100", 5, 770);
+        g2.drawString("Cost: 500", 5, 770);
         if(revolverPic != null)
             g2.drawImage(revolverPic, 125, 675, null);
         g2.drawString("Damage: 15", 125, 740);
         g2.drawString("Health: 110", 125, 755);
-        g2.drawString("Cost: 200", 125, 770);
+        g2.drawString("Cost: 1,640", 125, 770);
         if(riflePic != null)
             g2.drawImage(riflePic, 245, 680, null);
         g2.drawString("Damage: 30", 245, 740);
