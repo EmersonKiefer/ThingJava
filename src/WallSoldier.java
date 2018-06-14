@@ -3,13 +3,13 @@ import java.awt.*;
 /**
  * Created by student on 6/6/18.
  */
-public class Wall extends Soldier {
+public class WallSoldier extends Soldier {
     int row;
     private boolean isDead = false;
 
 
 
-    public Wall(int row){
+    public WallSoldier(int row){
         super(row, 500, 0, 400, 1);
         setPic("wall.png", EAST);
         setLoc(new Point(80,(int)(getLoc().getY())));

@@ -3,9 +3,9 @@ import java.awt.*;
 /**
  * Created by student on 6/6/18.
  */
-public class Tank extends Soldier {
+public class TankSoldier extends Soldier {
 
-    public Tank (int row){
+    public TankSoldier(int row){
 
         super(row, 600, 35, 3000, 4);
         setPic("tankGuy.png", EAST);

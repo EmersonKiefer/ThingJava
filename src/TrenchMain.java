@@ -35,9 +35,9 @@ public class TrenchMain extends JPanel {
     //5 rows of soldiers
     MeleeSoldier s1 = new MeleeSoldier(1);
     PistolSoldier s2 = new PistolSoldier(2);
-    Sniper s3 = new Sniper(3);
-    BazookaMan s4 = new BazookaMan(4);
-    Tank s5 = new Tank(5);
+    SniperSoldier s3 = new SniperSoldier(3);
+    BazookaSoldier s4 = new BazookaSoldier(4);
+    TankSoldier s5 = new TankSoldier(5);
 
     //enemies
 
@@ -168,31 +168,31 @@ public class TrenchMain extends JPanel {
                             System.out.println("box2");
                         }
                         if (e.getX() >= 245 && e.getX() <= 355) {//sniper
-                            soldiers.add(new Sniper(row));
+                            soldiers.add(new SniperSoldier(row));
                             row ++;
                             repaint();
                             System.out.println("box3");
                         }
                         if (e.getX() >= 365 && e.getX() <= 475) {//bazooka
-                            soldiers.add(new BazookaMan(row));
+                            soldiers.add(new BazookaSoldier(row));
                             row ++;
                             repaint();
                             System.out.println("box4");
                         }
                         if (e.getX() >= 485 && e.getX() <= 595) {//tank
-                            soldiers.add(new Tank(row));
+                            soldiers.add(new TankSoldier(row));
                             row ++;
                             repaint();
                             System.out.println("box5");
                         }
                         if (e.getX() >= 605 && e.getX() <= 715) {//barbed wire
-                            soldiers.add(new BarbedWire(row));
+                            soldiers.add(new WireSoldier(row));
                             row ++;
                             repaint();
                             System.out.println("box6");
                         }
                         if (e.getX() >= 725 && e.getX() <= 835) {//wall
-                            soldiers.add(new Wall(row));
+                            soldiers.add(new WallSoldier(row));
                             row ++;
                             repaint();
 

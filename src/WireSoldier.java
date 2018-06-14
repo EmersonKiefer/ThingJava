@@ -3,13 +3,13 @@ import java.awt.*;
 /**
  * Created by student on 6/6/18.
  */
-public class BarbedWire extends Soldier {
+public class WireSoldier extends Soldier {
     int row;
     private boolean isDead = false;
 
 
 
-    public BarbedWire(int row){
+    public WireSoldier(int row){
         super(row, 200, 1, 150, 0);
         setPic("barbedWire.png", EAST);
         setLoc(new Point(100,(int)(getLoc().getY())));
