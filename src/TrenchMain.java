@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class TrenchMain extends JPanel {
     //instance fields for the general environment
     public static final int FRAMEWIDTH = 1200, FRAMEHEIGHT = 800;
-    private Timer timer;
+    private Timer timer, timer2;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private boolean startstop = true;
@@ -92,6 +92,9 @@ public class TrenchMain extends JPanel {
 
 
 
+
+
+
         timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -120,8 +123,10 @@ public class TrenchMain extends JPanel {
             }
         });
 
+
         setupMouseListener();
     }
+
 
 
     public void setupMouseListener(){
@@ -374,6 +379,10 @@ public class TrenchMain extends JPanel {
         window.add(panel);
         window.setVisible(true);
         window.setResizable(false);
+        MakeSound makeSound = new MakeSound();
+        makeSound.playSound("/Users/student/hangman/ThingJava/res/War and Peace Video Game Soundtrack - 09 Prussia Battle.wav");
+
+
     }
 }
 
