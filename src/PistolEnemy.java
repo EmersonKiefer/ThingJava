@@ -4,7 +4,7 @@
 public class PistolEnemy extends Enemy{
 
     public PistolEnemy(int row){
-        super(row, 100, 5);
+        super(row, 110, 15);
         setPic("enemyRevolverGuy.png", EAST);
         setSpeed(15);
     }
