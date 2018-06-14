@@ -99,14 +99,22 @@ public class TrenchMain extends JPanel {
                 enemyCount = enemies.size();
                 soldierDamage = 0;
                 enemyDamage = 0;
-                for (Soldier s : soldiers)
+                for (Soldier s : soldiers) {
+                    if(!s.isDead())
                     soldierDamage += s.getDamage();
-                for (Enemy e : enemies)
+                }
+                for (Enemy e : enemies) {
+                    if(!e.isDead())
                     enemyDamage += e.getDamage();
-                for (Soldier s: soldiers)
+                }
+                for (Soldier s: soldiers) {
+                    if(!s.isDead())
                     s.update();
-                for (Enemy e : enemies)
+                }
+                for (Enemy e : enemies) {
+                    if(!e.isDead())
                     e.update();
+                }
                 battle();
                 repaint();
             }
@@ -334,6 +342,7 @@ public class TrenchMain extends JPanel {
                 s.decreaseHealthBy(enemyDamage / enemyCount);
                 if (s.getHealth() <= 0) {
                     s.kill();
+//                    soldiers.remove(s);
                     soldierCount--;
                 }
             }
@@ -343,6 +352,7 @@ public class TrenchMain extends JPanel {
                 e.decreaseHealthBy(soldierDamage / soldierCount);
                 if (e.getHealth() <= 0) {
                     e.kill();
+//                    enemies.remove(e);
                     enemyCount--;
                 }
             }
