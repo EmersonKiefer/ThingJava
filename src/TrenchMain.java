@@ -37,6 +37,7 @@ public class TrenchMain extends JPanel {
         }
         for (int i = 1; i <= 5; i++) {
             lvl2.add(new PistolEnemy(i));
+            lvl3.add(new TankEnemy(i));
         }
 
         if (level == 1){
@@ -96,9 +97,19 @@ public class TrenchMain extends JPanel {
                 }
                 battle();
                 if (enemyCount == 0)
-                    level++;
-                if (soldierCount == 0)
+                    if(level == 1) {
+                        enemies = lvl2;
+                        level++;
+                    }
+                    else if(level == 2) {
+                        enemies = lvl3;
+//                        level++;
+                    }
+
+                if (soldierCount == 0 && money < 100) {
                     enemies = lvl1;
+                    level = 0;
+                }
                 repaint();
             }
         });
