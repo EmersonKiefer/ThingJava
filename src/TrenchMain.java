@@ -237,6 +237,10 @@ public class TrenchMain extends JPanel {
         Graphics2D g2 = (Graphics2D)g;
         if(backgroundPic != null)
             g2.drawImage(backgroundPic, 0, -40, null);
+        g2.setColor(Color.white);
+        g2.drawString("Your money: $" + money, 2, 15);
+        g2.drawString("Level: "+ level, 200, 15);
+        g2.setColor(Color.black);
         for (Soldier s: soldiers) {
             if (!s.isDead())
                 s.draw(g2);
