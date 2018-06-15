@@ -10,7 +10,7 @@ public class WireSoldier extends Soldier {
 
 
     public WireSoldier(int row){
-        super(row, 200, 1, 150, 0);
+        super(row, 200, 1, 150);
         setPic("enemyBarbedWire.png", EAST);
         setLoc(new Point(100,(int)(getLoc().getY())));
         this.row = row;

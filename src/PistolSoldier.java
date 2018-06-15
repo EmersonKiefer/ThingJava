@@ -6,7 +6,7 @@ public class PistolSoldier extends Soldier{
 
 
     public PistolSoldier(int row){
-        super(row, 110, 15, 200, 1);
+        super(row, 110, 15, 200);
         setPic("revolverGuy.png", EAST);
         setSpeed(12);
     }

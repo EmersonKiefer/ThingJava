@@ -383,7 +383,7 @@ public class TrenchMain extends JPanel {
         window.setVisible(true);
         window.setResizable(false);
         MakeSound makeSound = new MakeSound();
-        makeSound.playSound("/Users/student/hangman/ThingJava/res/War and Peace Video Game Soundtrack - 09 Prussia Battle.wav");
+        makeSound.playSound("res/War and Peace Video Game Soundtrack - 09 Prussia Battle.wav");
 
 
     }
