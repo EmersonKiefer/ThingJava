@@ -204,6 +204,9 @@ public class TrenchMain extends JPanel {
                             System.out.println("box7");
                         }
                         if (e.getX() >= 845 && e.getX() <= 955) {//turret
+                            soldiers.add(new TurretSoldier(row));
+                            row ++;
+                            repaint();
 
                             System.out.println("box8");
                         }
