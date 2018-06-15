@@ -112,6 +112,7 @@ public class TrenchMain extends JPanel {
                 }
                 repaint();
             }
+
         });
 
 
