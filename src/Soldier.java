@@ -7,7 +7,7 @@ public class Soldier extends Sprite {
     private boolean isDead = false;
 
 
-    public Soldier(int row, int health, int damage, int cost){
+    public Soldier(int row, int health, int damage){
         super(0, 100*row + 65, EAST);
         setPic("SoldierGuy.png", EAST);
         setSpeed(15);

@@ -5,7 +5,7 @@ public class SniperSoldier extends Soldier {
 
 
     public SniperSoldier(int row) {
-        super(row, 120, 30, 500);
+        super(row, 120, 30);
         setPic("rifleGuy.png", EAST);
         setSpeed(7);
     }

@@ -10,7 +10,7 @@ public class WallSoldier extends Soldier {
 
 
     public WallSoldier(int row){
-        super(row, 500, 0, 400);
+        super(row, 500, 0);
         setPic("wall.png", EAST);
         setLoc(new Point(80,(int)(getLoc().getY())));
         this.row = row;
