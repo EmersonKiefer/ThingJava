@@ -8,7 +8,7 @@ public class TankEnemy extends Enemy {
     public TankEnemy(int row){
 
         super(row, 600, 35);
-        setPic("enemyTankGuy.png", EAST);
+        setPic("enemyTankGuy.png", WEST);
         setLoc(new Point((int)(getLoc().getX()), (int)(getLoc().getY()+30)));
         setSpeed(4);
     }

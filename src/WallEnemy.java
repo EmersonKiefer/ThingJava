@@ -11,7 +11,7 @@ public class WallEnemy extends Enemy {
 
     public WallEnemy(int row){
         super(row, 500, 0);
-        setPic("enemyWall.png", EAST);
+        setPic("enemyWall.png", WEST);
         setLoc(new Point(80,(int)(getLoc().getY())));
         this.row = row;
         setSpeed(0);

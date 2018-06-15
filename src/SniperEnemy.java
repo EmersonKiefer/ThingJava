@@ -6,7 +6,7 @@ public class SniperEnemy extends Enemy {
 
     public SniperEnemy(int row) {
         super(row, 120, 30);
-        setPic("enemyRifleGuy.png", EAST);
+        setPic("enemyRifleGuy.png", WEST);
         setSpeed(7);
     }
 }
