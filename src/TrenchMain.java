@@ -32,20 +32,27 @@ public class TrenchMain extends JPanel {
 
 
     public TrenchMain() {
-        if (level == 1){
+        for (int i = 1; i <= 5; i++) {
+            lvl1.add(new MeleeEnemy(i));
+        }
+        for (int i = 1; i <= 5; i++) {
+            lvl2.add(new PistolEnemy(i));
+        }
 
+        if (level == 1){
+            enemies = lvl1;
         }
         if (level == 2){
-
+            enemies = lvl2;
         }
         if (level == 3){
-
+            enemies = lvl3;
         }
         if (level == 4){
-
+            enemies = lvl4;
         }
         if (level == 5){
-
+            enemies = lvl5;
         }
         try {
             knifePic = ImageIO.read(new File("res/" + "knife.png"));
@@ -62,30 +69,6 @@ public class TrenchMain extends JPanel {
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
-//        soldiers.add(s1);
-//        soldiers.add(s2);
-//        soldiers.add(s3);
-//        soldiers.add(s4);
-//        soldiers.add(s5);
-        //adding enemies to their arraylist
-        enemies.add(e1);
-        enemies.add(e2);
-        enemies.add(e3);
-        enemies.add(e4);
-        enemies.add(e5);
-
-        //get sizes of soldier and enemy arraylist
-
-
-
-
-        //getting total damage of soldiers and enemies
-
-
-
-
 
 
         timer = new Timer(850, new ActionListener() {
@@ -112,6 +95,10 @@ public class TrenchMain extends JPanel {
                     e.update();
                 }
                 battle();
+                if (enemyCount == 0)
+                    level++;
+                if (soldierCount == 0)
+                    enemies = lvl1;
                 repaint();
             }
         });
