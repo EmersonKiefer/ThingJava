@@ -17,43 +17,36 @@ public class TrenchMain extends JPanel {
     public static final int FRAMEWIDTH = 1200, FRAMEHEIGHT = 800;
     private Timer timer, timer2;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
-    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
     private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 0;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
+    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    private ArrayList<Enemy> lvl1 = new ArrayList<Enemy>();
+    private ArrayList<Enemy> lvl2 = new ArrayList<Enemy>();
+    private ArrayList<Enemy> lvl3 = new ArrayList<Enemy>();
+    private ArrayList<Enemy> lvl4 = new ArrayList<Enemy>();
+    private ArrayList<Enemy> lvl5 = new ArrayList<Enemy>();
 
 
-
-
-    //gun icon on bottom
-//    Sprite test = new MeleeSoldier(5, 725, 100, 100);
-
-
-
-    //5 rows of soldiers
-    MeleeSoldier s1 = new MeleeSoldier(1);
-    PistolSoldier s2 = new PistolSoldier(2);
-    SniperSoldier s3 = new SniperSoldier(3);
-    BazookaSoldier s4 = new BazookaSoldier(4);
-    TankSoldier s5 = new TankSoldier(5);
-
-    //enemies
-
-    Enemy e1 = new Enemy(1, 100, 50);
-    Enemy e2 = new Enemy(2, 50, 5);
-    Enemy e3 = new Enemy(3, 50, 5);
-    Enemy e4 = new Enemy(4, 50, 5);
-    Enemy e5 = new Enemy(5, 50, 5);
-
-
-
-    //TESTING
 
     public TrenchMain() {
-        //adding 5 soldiers to their arraylist
+        if (level == 1){
 
+        }
+        if (level == 2){
+
+        }
+        if (level == 3){
+
+        }
+        if (level == 4){
+
+        }
+        if (level == 5){
+
+        }
         try {
             knifePic = ImageIO.read(new File("res/" + "knife.png"));
             wirePic = ImageIO.read(new File("res/" + "barbedWire.png"));
