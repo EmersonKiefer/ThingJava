@@ -1,5 +1,7 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -17,6 +19,7 @@ public class Sprite {
     private BufferedImage pic; //put the file in the res folder.
     private int speed; //Number of pixels moved each frame.
     private int id;
+    //private Timer t;
     public static final int NORTH = 90, SOUTH = 270, WEST = 180, EAST = 0, NE = 45, NW = 135, SW = 225, SE = 315;
 
 
@@ -28,6 +31,8 @@ public class Sprite {
 
         id = nextID;
         nextID++;
+
+
     }
 
     /**
@@ -60,6 +65,8 @@ public class Sprite {
     public boolean intersects(Sprite other){
         return getBoundingRectangle().intersects(other.getBoundingRectangle());
     }
+
+
 
 
     /**
