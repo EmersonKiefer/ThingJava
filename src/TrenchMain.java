@@ -19,7 +19,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 0;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 500;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -151,48 +151,54 @@ public class TrenchMain extends JPanel {
 
 
                     if (e.getY() >= 670 && e.getY() <= 780) {
-                        if (e.getX() >= 5 && e.getX() <= 110) {//melee
+                        if (e.getX() >= 5 && e.getX() <= 110 && money >= 175) {//melee
                             soldiers.add(new MeleeSoldier(row));
                             row++;
+                            money -= 175;
                             repaint();
 
                             System.out.println("box1");
                         }
-                        if (e.getX() >= 125 && e.getX() <= 235) {//pistol
+                        if (e.getX() >= 125 && e.getX() <= 235 && money >= 285) {//pistol
                             soldiers.add(new PistolSoldier(row));
                             row ++;
+                            money -= 285;
                             repaint();
                             System.out.println("box2");
                         }
-                        if (e.getX() >= 245 && e.getX() <= 355) {//sniper
+                        if (e.getX() >= 245 && e.getX() <= 355 && money >= 450) {//sniper
                             soldiers.add(new SniperSoldier(row));
                             row ++;
+                            money -=450;
                             repaint();
                             System.out.println("box3");
                         }
-                        if (e.getX() >= 365 && e.getX() <= 475) {//bazooka
+                        if (e.getX() >= 365 && e.getX() <= 475 && money >= 750) {//bazooka
                             soldiers.add(new BazookaSoldier(row));
                             row ++;
+                            money -= 750;
                             repaint();
                             System.out.println("box4");
                         }
-                        if (e.getX() >= 485 && e.getX() <= 595) {//tank
+                        if (e.getX() >= 485 && e.getX() <= 595 && money >=1100) {//tank
                             soldiers.add(new TankSoldier(row));
                             row ++;
+                            money -= 1100;
                             repaint();
                             System.out.println("box5");
                         }
-                        if (e.getX() >= 605 && e.getX() <= 715) {//barbed wire
+                        if (e.getX() >= 605 && e.getX() <= 715 && money >= 260) {//barbed wire
                             soldiers.add(new WireSoldier(row));
                             row ++;
+                            money -= 260;
                             repaint();
                             System.out.println("box6");
                         }
-                        if (e.getX() >= 725 && e.getX() <= 835) {//wall
+                        if (e.getX() >= 725 && e.getX() <= 835 && money >=  625) {//wall
                             soldiers.add(new WallSoldier(row));
                             row ++;
                             repaint();
-
+                            money -= 625;
                             System.out.println("box7");
                         }
                         if (e.getX() >= 845 && e.getX() <= 955) {//turret
