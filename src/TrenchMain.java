@@ -19,7 +19,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 500;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 1100;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -34,11 +34,18 @@ public class TrenchMain extends JPanel {
     public TrenchMain() {
         for (int i = 1; i <= 5; i++) {
             lvl1.add(new MeleeEnemy(i));
+            lvl2.add(new PistolEnemy(i));
+            lvl3.add(new SniperEnemy(i));
         }
         for (int i = 1; i <= 5; i++) {
-            lvl2.add(new PistolEnemy(i));
-            lvl3.add(new TankEnemy(i));
+            if (i%2 == 1) {
+                lvl3.add(new PistolEnemy(i));
+            }
+            else if (i%2 == 0) {
+            }
         }
+
+
 
         if (level == 1){
             enemies = lvl1;
@@ -75,6 +82,8 @@ public class TrenchMain extends JPanel {
         timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
+
                 soldierCount = soldiers.size();
                 enemyCount = enemies.size();
                 soldierDamage = 0;
@@ -103,7 +112,15 @@ public class TrenchMain extends JPanel {
                     }
                     else if(level == 2) {
                         enemies = lvl3;
-//                        level++;
+                        level++;
+                    }
+                    else if (level == 3){
+                        enemies = lvl4;
+                        level++;
+                    }
+                    else if (level == 4){
+                        enemies = lvl5;
+                        level++;
                     }
 
                 if (soldierCount == 0 && money < 100) {
