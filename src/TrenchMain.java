@@ -19,7 +19,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private boolean startstop = true;
     private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 1100;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 1100000000;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -36,12 +36,14 @@ public class TrenchMain extends JPanel {
             lvl1.add(new MeleeEnemy(i));
             lvl2.add(new PistolEnemy(i));
             lvl3.add(new SniperEnemy(i));
+            lvl4.add(new SniperEnemy(i));
         }
         for (int i = 1; i <= 5; i++) {
             if (i%2 == 1) {
                 lvl3.add(new PistolEnemy(i));
             }
             else if (i%2 == 0) {
+                lvl3.add(new MeleeEnemy(i));
             }
         }
 
@@ -104,24 +106,33 @@ public class TrenchMain extends JPanel {
                     if(!e.isDead())
                     e.update();
                 }
+                System.out.println(enemyCount);
+                System.out.println(soldierCount);
                 battle();
-                if (enemyCount == 0)
-                    if(level == 1) {
+
+                if (enemyCount == 0) {
+                    timer.stop();
+                    for (Soldier s: soldiers) {
+                        if (s instanceof WallSoldier)
+                            s.setLoc(new Point(80, s.getLoc().y));
+                        else
+                            s.setLoc(new Point(0, s.getLoc().y));
+                    }
+                    startstop = true;
+                    if (level == 1) {
                         enemies = lvl2;
                         level++;
-                    }
-                    else if(level == 2) {
+                    } else if (level == 2) {
                         enemies = lvl3;
                         level++;
-                    }
-                    else if (level == 3){
+                    } else if (level == 3) {
                         enemies = lvl4;
                         level++;
-                    }
-                    else if (level == 4){
+                    } else if (level == 4) {
                         enemies = lvl5;
                         level++;
                     }
+                }
 
                 if (soldierCount == 0 && money < 100) {
                     enemies = lvl1;

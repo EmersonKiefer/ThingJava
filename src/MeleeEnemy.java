@@ -6,7 +6,7 @@ public class MeleeEnemy extends Enemy {
 
 
 public MeleeEnemy(int row){
-        super(row, 100, 5);
+        super(row, 95, 5);
         setPic("enemyMeleeGuy.png", WEST);
         setSpeed(15);
         }
