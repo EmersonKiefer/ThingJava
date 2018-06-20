@@ -3,7 +3,7 @@
  */
 public class Enemy extends Sprite {
 
-    private int health, damage;
+    private int health, damage, reward;
     private boolean isDead = false;
 
     public Enemy(int row, int health, int damage){
@@ -12,6 +12,7 @@ public class Enemy extends Sprite {
         setSpeed(10);
         this.health = health;
         this.damage = damage;
+        reward = (int)((health*1.25 + 10*damage)*.9);
 
     }
     public void update(){
@@ -32,9 +33,8 @@ public class Enemy extends Sprite {
         isDead = true;
     }
     public void respawn(){isDead = false; }
-    public void setHealth(int h){
-        health = h;
-    }
+    public void setHealth(int h){health = h; }
+    public int getReward(){return reward;}
     public boolean isDead(){
         return isDead;
     }

@@ -3,12 +3,12 @@ import java.awt.*;
 /**
  * Created by student on 6/6/18.
  */
-public class TurretSoldier extends Soldier {
+public class TurretEnemy extends Enemy {
 
-    public TurretSoldier(int row){
+    public TurretEnemy(int row){
 
         super(row, 250, 25);
-        setPic("machineGun.png", EAST);
+        setPic("machineGunEnemy.png", WEST);
         setLoc(new Point((int)(getLoc().getX()), (int)(getLoc().getY()+30)));
         setSpeed(0);
     }

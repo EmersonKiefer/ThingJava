@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class TrenchMain extends JPanel {
     //instance fields for the general environment
     public static final int FRAMEWIDTH = 1200, FRAMEHEIGHT = 800;
-    private Timer timer, timer2;
+    private Timer timer;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private boolean startstop = true;
-    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 900;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 900, reward = 0;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -33,13 +33,31 @@ public class TrenchMain extends JPanel {
     public TrenchMain() {
         for (int i = 1; i <= 5; i++) {
             lvl1.add(new MeleeEnemy(i));
+
             lvl2.add(new PistolEnemy(i));
-            lvl2.add(new SniperEnemy(i));
-            lvl2.add(new SniperEnemy(i));
-            lvl2.add(new SniperEnemy(i));
-            lvl2.add(new BazookaEnemy(i));
+            lvl2.add(new MeleeEnemy(i));
+
+            lvl3.add(new MeleeEnemy(i));
+            lvl3.add(new PistolEnemy(i));
             lvl3.add(new SniperEnemy(i));
+            lvl3.add(new WallEnemy(i));
+
+            lvl4.add(new MeleeEnemy(i));
+            lvl4.add(new PistolEnemy(i));
             lvl4.add(new SniperEnemy(i));
+            lvl4.add(new WallEnemy(i));
+            lvl4.add(new WireEnemy(i));
+            lvl4.add(new BazookaEnemy(i));
+
+            lvl5.add(new MeleeEnemy(i));
+            lvl5.add(new PistolEnemy(i));
+            lvl5.add(new SniperEnemy(i));
+            lvl5.add(new WallEnemy(i));
+            lvl5.add(new WireEnemy(i));
+            lvl5.add(new BazookaEnemy(i));
+            lvl5.add(new TankEnemy(i));
+            lvl5.add(new TurretEnemy(i));
+
         }
         if (level == 1){
             enemies = lvl1;
@@ -103,16 +121,18 @@ public class TrenchMain extends JPanel {
                 }
 
                 battle();
-                System.out.println();
-                System.out.println("enemyCount:" + enemyCount);
-                System.out.println("soldierCount:" + soldierCount);
-                System.out.println("enemyDamage:" + enemyDamage);
-                System.out.println("soldierDamage:" + soldierDamage);
+//                System.out.println();
+//                System.out.println("enemyCount:" + enemyCount);
+//                System.out.println("soldierCount:" + soldierCount);
+//                System.out.println("enemyDamage:" + enemyDamage);
+//                System.out.println("soldierDamage:" + soldierDamage);
 
                 if (enemyCount == 0) {
+                    reward += ((327.1 * Math.pow(level + 1, 4)) - (3981 * Math.pow(level + 1, 3)) + (17680 * Math.pow(level + 1, 2)) - (28640 * (level + 1)) + 15510);
+
                     timer.stop();
                     for (Soldier s: soldiers) {
-                        if (s instanceof WallSoldier)
+                        if (s instanceof WallSoldier || s instanceof WireSoldier)
                             s.setLoc(new Point(80, s.getLoc().y));
                         else
                             s.setLoc(new Point(0, s.getLoc().y));
@@ -121,15 +141,23 @@ public class TrenchMain extends JPanel {
                     if (level == 1) {
                         enemies = lvl2;
                         level++;
+                        money += reward;
+                        reward = 0;
                     } else if (level == 2) {
                         enemies = lvl3;
                         level++;
+                        money += reward;
+                        reward = 0;
                     } else if (level == 3) {
                         enemies = lvl4;
                         level++;
+                        money += reward;
+                        reward = 0;
                     } else if (level == 4) {
                         enemies = lvl5;
                         level++;
+                        money += reward;
+                        reward = 0;
                     }
                 }
 
@@ -142,7 +170,7 @@ public class TrenchMain extends JPanel {
                     row = 1;
                     for (Enemy e : enemies) {
                         e.respawn();
-                        if (e instanceof WallEnemy)
+                        if (e instanceof WallEnemy || e instanceof WireEnemy)
                             e.setLoc(new Point(1020, e.getLoc().y));
                         else
                             e.setLoc(new Point(1100, e.getLoc().y));
