@@ -31,6 +31,10 @@ public class Enemy extends Sprite {
     public void kill(){
         isDead = true;
     }
+    public void respawn(){isDead = false; }
+    public void setHealth(int h){
+        health = h;
+    }
     public boolean isDead(){
         return isDead;
     }

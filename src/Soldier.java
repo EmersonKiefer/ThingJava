@@ -3,7 +3,7 @@
  */
 public class Soldier extends Sprite {
 
-    private int health, damage, cost, tier;
+    private int health, damage, cost;
     private boolean isDead = false;
 
 
@@ -13,9 +13,7 @@ public class Soldier extends Sprite {
         setSpeed(15);
         this.health = health;
         this.damage = damage;
-        this.cost = cost;
-        this.tier = tier;
-        cost = (int)(health*1.25* 10*damage);
+        cost = (int)(health*1.25 + 10*damage);
 
     }
     public void update(){

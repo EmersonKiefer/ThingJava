@@ -18,8 +18,7 @@ public class TrenchMain extends JPanel {
     private Timer timer, timer2;
     private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
     private boolean startstop = true;
-    private int soldierHealth = 0, enemyHealth = 0;
-    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 1100000000;
+    private int soldierDamage = 0, enemyDamage = 0, row = 1, level = 1, money = 900;
     private int soldierCount = 0, enemyCount = 0;
     private BufferedImage knifePic, wirePic, bazookaPic, machineGunPic, revolverPic, riflePic, wallPic, tankPic, backgroundPic, minePic;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -35,20 +34,13 @@ public class TrenchMain extends JPanel {
         for (int i = 1; i <= 5; i++) {
             lvl1.add(new MeleeEnemy(i));
             lvl2.add(new PistolEnemy(i));
+            lvl2.add(new SniperEnemy(i));
+            lvl2.add(new SniperEnemy(i));
+            lvl2.add(new SniperEnemy(i));
+            lvl2.add(new BazookaEnemy(i));
             lvl3.add(new SniperEnemy(i));
             lvl4.add(new SniperEnemy(i));
         }
-        for (int i = 1; i <= 5; i++) {
-            if (i%2 == 1) {
-                lvl3.add(new PistolEnemy(i));
-            }
-            else if (i%2 == 0) {
-                lvl3.add(new MeleeEnemy(i));
-            }
-        }
-
-
-
         if (level == 1){
             enemies = lvl1;
         }
@@ -64,6 +56,8 @@ public class TrenchMain extends JPanel {
         if (level == 5){
             enemies = lvl5;
         }
+
+
         try {
             knifePic = ImageIO.read(new File("res/" + "knife.png"));
             wirePic = ImageIO.read(new File("res/" + "barbedWire.png"));
@@ -88,27 +82,32 @@ public class TrenchMain extends JPanel {
 
                 soldierCount = soldiers.size();
                 enemyCount = enemies.size();
-                soldierDamage = 0;
-                enemyDamage = 0;
                 for (Soldier s : soldiers) {
-                    if(!s.isDead())
-                    soldierDamage += s.getDamage();
+                    if(!s.isDead()) {
+                        soldierDamage += s.getDamage();
+                    }
                 }
                 for (Enemy e : enemies) {
-                    if(!e.isDead())
-                    enemyDamage += e.getDamage();
+                    if(!e.isDead()) {
+                        enemyDamage += e.getDamage();
+                    }
+
                 }
                 for (Soldier s: soldiers) {
                     if(!s.isDead())
-                    s.update();
+                        s.update();
                 }
                 for (Enemy e : enemies) {
                     if(!e.isDead())
-                    e.update();
+                        e.update();
                 }
-                System.out.println(enemyCount);
-                System.out.println(soldierCount);
+
                 battle();
+                System.out.println();
+                System.out.println("enemyCount:" + enemyCount);
+                System.out.println("soldierCount:" + soldierCount);
+                System.out.println("enemyDamage:" + enemyDamage);
+                System.out.println("soldierDamage:" + soldierDamage);
 
                 if (enemyCount == 0) {
                     timer.stop();
@@ -135,10 +134,31 @@ public class TrenchMain extends JPanel {
                 }
 
                 if (soldierCount == 0 && money < 100) {
+                    timer.stop();
+
+                    startstop = true;
                     enemies = lvl1;
-                    level = 0;
+                    level = 1;
+                    row = 1;
+                    for (Enemy e : enemies) {
+                        e.respawn();
+                        if (e instanceof WallEnemy)
+                            e.setLoc(new Point(1020, e.getLoc().y));
+                        else
+                            e.setLoc(new Point(1100, e.getLoc().y));
+                        e.setHealth(95);
+                    }
+                    for (int i = soldiers.size() - 1; i >= 0; i--) {
+                        soldiers.remove(i);
+                    }
+                    money = 900;
+                    repaint();
                 }
                 repaint();
+                soldierDamage = 0;
+                enemyDamage = 0;
+
+
             }
 
         });
@@ -184,65 +204,65 @@ public class TrenchMain extends JPanel {
                             row++;
                             money -= 175;
                             repaint();
-
-                            System.out.println("box1");
+//                            System.out.println("box1");
                         }
                         if (e.getX() >= 125 && e.getX() <= 235 && money >= 285) {//pistol
                             soldiers.add(new PistolSoldier(row));
                             row ++;
                             money -= 285;
                             repaint();
-                            System.out.println("box2");
+//                            System.out.println("box2");
                         }
                         if (e.getX() >= 245 && e.getX() <= 355 && money >= 450) {//sniper
                             soldiers.add(new SniperSoldier(row));
                             row ++;
                             money -=450;
                             repaint();
-                            System.out.println("box3");
+//                            System.out.println("box3");
                         }
                         if (e.getX() >= 365 && e.getX() <= 475 && money >= 750) {//bazooka
                             soldiers.add(new BazookaSoldier(row));
                             row ++;
                             money -= 750;
                             repaint();
-                            System.out.println("box4");
+//                            System.out.println("box4");
                         }
                         if (e.getX() >= 485 && e.getX() <= 595 && money >=1100) {//tank
                             soldiers.add(new TankSoldier(row));
                             row ++;
                             money -= 1100;
                             repaint();
-                            System.out.println("box5");
+//                            System.out.println("box5");
                         }
                         if (e.getX() >= 605 && e.getX() <= 715 && money >= 260) {//barbed wire
                             soldiers.add(new WireSoldier(row));
                             row ++;
                             money -= 260;
                             repaint();
-                            System.out.println("box6");
+//                            System.out.println("box6");
                         }
                         if (e.getX() >= 725 && e.getX() <= 835 && money >=  625) {//wall
                             soldiers.add(new WallSoldier(row));
                             row ++;
                             repaint();
                             money -= 625;
-                            System.out.println("box7");
+//                            System.out.println("box7");
                         }
-                        if (e.getX() >= 845 && e.getX() <= 955) {//turret
+                        if (e.getX() >= 845 && e.getX() <= 955 && money >= 563) {//turret
                             soldiers.add(new TurretSoldier(row));
                             row ++;
                             repaint();
+                            money -= 563;
 
-                            System.out.println("box8");
+//                            System.out.println("box8");
                         }
                         if (e.getX() >= 965 && e.getX() <= 1075) {
 
-                            System.out.println("box9");
+//                            System.out.println("box9");
                         }
                         if (e.getX() >= 1085 && e.getX() <= 1195) {
 
-                            System.out.println("box10");
+//                            System.out.println("box10");
                         }
                     }
                 }
@@ -286,7 +306,6 @@ public class TrenchMain extends JPanel {
                 e.draw(g2);
         }
 
-//        g2.fillRect(0, 0, 1200, 150);
         g2.fillRect(0, 650, 1200, 150);
 
         //menu boxes
@@ -354,43 +373,33 @@ public class TrenchMain extends JPanel {
         g2.drawString("Cost: 625", 725, 770);
         if(machineGunPic != null)
             g2.drawImage(machineGunPic, 855, 670, null);
-        g2.drawString("Damage: 5", 845, 740);
-        g2.drawString("Health: 5", 845, 755);
-        g2.drawString("Cost: 5", 845, 770);
+        g2.drawString("Damage: 25", 845, 740);
+        g2.drawString("Health: 250", 845, 755);
+        g2.drawString("Cost: 563", 845, 770);
         if(minePic != null)
             g2.drawImage(minePic, 975, 670, null);
 
-
-
-
-
-
-
-
-
         //start stop end
-
-
 
     }
 
     public void battle(){
         if (enemyCount > 0) {
             for (Soldier s : soldiers) {
-                s.decreaseHealthBy(enemyDamage / enemyCount);
+                s.decreaseHealthBy(enemyDamage / soldierCount);
                 if (s.getHealth() <= 0) {
                     s.kill();
-//                    soldiers.remove(s);
                     soldierCount--;
                 }
             }
         }
+
+
         if (soldierCount > 0){
             for (Enemy e : enemies){
-                e.decreaseHealthBy(soldierDamage / soldierCount);
+                e.decreaseHealthBy(soldierDamage / enemyCount);
                 if (e.getHealth() <= 0) {
                     e.kill();
-//                    enemies.remove(e);
                     enemyCount--;
                 }
             }
