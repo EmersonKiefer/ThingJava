@@ -12,7 +12,7 @@ public class WireEnemy extends Enemy{
     public WireEnemy(int row){
         super(row, 200, 1);
         setPic("barbedWire.png", WEST);
-        setLoc(new Point(100,(int)(getLoc().getY())));
+        setLoc(new Point(1020,(int)(getLoc().getY())));
         this.row = row;
         setSpeed(0);
     }

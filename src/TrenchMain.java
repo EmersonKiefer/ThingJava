@@ -48,6 +48,8 @@ public class TrenchMain extends JPanel {
             lvl4.add(new WallEnemy(i));
             lvl4.add(new WireEnemy(i));
             lvl4.add(new BazookaEnemy(i));
+            lvl4.add(new BazookaEnemy(i));
+
 
             lvl5.add(new MeleeEnemy(i));
             lvl5.add(new PistolEnemy(i));
@@ -56,7 +58,9 @@ public class TrenchMain extends JPanel {
             lvl5.add(new WireEnemy(i));
             lvl5.add(new BazookaEnemy(i));
             lvl5.add(new TankEnemy(i));
+            lvl5.add(new TankEnemy(i));
             lvl5.add(new TurretEnemy(i));
+
 
         }
         if (level == 1){
@@ -93,7 +97,7 @@ public class TrenchMain extends JPanel {
         }
 
 
-        timer = new Timer(850, new ActionListener() {
+        timer = new Timer(10, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -158,10 +162,13 @@ public class TrenchMain extends JPanel {
                         level++;
                         money += reward;
                         reward = 0;
+                    } else if (level == 5) {
+                        System.out.println("You Won!");
+                        System.exit(0);
                     }
                 }
 
-                if (soldierCount == 0 && money < 100) {
+                if (soldierCount == 0 && money < 175) {
                     timer.stop();
 
                     startstop = true;
@@ -271,6 +278,11 @@ public class TrenchMain extends JPanel {
                         }
                         if (e.getX() >= 725 && e.getX() <= 835 && money >=  625) {//wall
                             soldiers.add(new WallSoldier(row));
+                            for (Soldier s : soldiers){
+                                if (!(s instanceof WallSoldier)){
+                                    s.increaseHealthBy(500/soldierCount);
+                                }
+                            }
                             row ++;
                             repaint();
                             money -= 625;
@@ -445,7 +457,6 @@ public class TrenchMain extends JPanel {
 
         panel.setFocusable(true);
         panel.grabFocus();
-
         window.add(panel);
         window.setVisible(true);
         window.setResizable(false);
