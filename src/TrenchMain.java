@@ -97,7 +97,7 @@ public class TrenchMain extends JPanel {
         }
 
 
-        timer = new Timer(10, new ActionListener() {
+        timer = new Timer(850, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
