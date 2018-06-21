@@ -163,9 +163,14 @@ public class TrenchMain extends JPanel {
                         money += reward;
                         reward = 0;
                     } else if (level == 5) {
-                        System.out.println("You Won!");
+                        System.out.println("\\  /  _   |   |      \\      /\\      /    ￣|￣    |\\   |");
+                        System.out.println(" \\/  / \\  |   |       \\    /  \\    /       |      | \\  | ");
+                        System.out.println(" |   \\ /   \\ /         \\  /    \\  /        |      |  \\ |");
+                        System.out.println(" |    ￣    ￣           \\/      \\/      __|__     |  \\|" );
+
                         System.exit(0);
                     }
+
                 }
 
                 if (soldierCount == 0 && money < 175) {
