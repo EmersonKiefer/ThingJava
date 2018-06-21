@@ -27,7 +27,7 @@ public class TrenchMain extends JPanel {
     private ArrayList<Enemy> lvl3 = new ArrayList<Enemy>();
     private ArrayList<Enemy> lvl4 = new ArrayList<Enemy>();
     private ArrayList<Enemy> lvl5 = new ArrayList<Enemy>();
-
+    //levels
 
 
     public TrenchMain() {
